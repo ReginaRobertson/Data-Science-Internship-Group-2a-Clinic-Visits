@@ -65,5 +65,4 @@ group2a-clinic-visits/
 
 ## Notes
 
-- This dataset is shared with group2b, who are answering the same question independently. Data quality findings are shared openly between groups; analysis and conclusions are not.
-- Never committed to this repo: passwords, connection strings, or large raw data files.
+- This dataset is shared with group2b, who are answering the same question independently. 
