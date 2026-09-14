@@ -26,18 +26,18 @@ Each week has a **Deliverable** and a **Done when** line. If you cannot honestly
 
 ### Everyone individually
 
-- [ ] Created a GitHub account and sent my username to the group lead
-- [ ] Installed Power BI Desktop (Windows only — flag it now if you are on Mac or Linux)
-- [ ] Installed a SQL client (DBeaver recommended)
-- [ ] Installed Git and ran `git config --global user.name` and `user.email`
-- [ ] Connected to the database and ran the three checks on my access sheet
-- [ ] Confirmed I can reach `raw_clinic` and write to `group2a`
+- [x] Created a GitHub account and sent my username to the group lead (RR)
+- [x] Installed Power BI Desktop (Windows only — flag it now if you are on Mac or Linux) (RR)
+- [x] Installed a SQL client (DBeaver recommended) (RR)
+- [x] Installed Git and ran `git config --global user.name` and `user.email` (RR)
+- [x] Connected to the database and ran the three checks on my access sheet (RR)
+- [x] Confirmed I can reach `raw_clinic` and write to `group2a` (RR)
 
 ### As a group
 
 - [ ] Created the group repository on GitHub and added every member
 - [ ] Everyone has cloned it and made at least one commit
-- [ ] Agreed a communication channel and a weekly working time
+- [x] Agreed a communication channel and a weekly working time
 - [ ] Agreed who leads each phase (see the rota below)
 - [ ] Read the project brief together — all of it, aloud if necessary
 
