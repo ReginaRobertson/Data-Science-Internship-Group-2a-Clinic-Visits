@@ -35,11 +35,11 @@ Each week has a **Deliverable** and a **Done when** line. If you cannot honestly
 
 ### As a group
 
-- [ ] Created the group repository on GitHub and added every member
+- [x] Created the group repository on GitHub and added every member
 - [ ] Everyone has cloned it and made at least one commit
 - [x] Agreed a communication channel and a weekly working time
 - [ ] Agreed who leads each phase (see the rota below)
-- [ ] Read the project brief together — all of it, aloud if necessary
+- [x] Read the project brief together — all of it, aloud if necessary
 
 **Deliverable:** a repository with every member's name in the commit history.  
 **Done when:** every single person has connected to the database on their own machine. Not the group lead on everyone's behalf.
@@ -65,7 +65,7 @@ The lead is not the only person doing the work. They are the person who makes su
 
 **Goal:** agree exactly what you are answering before touching data. Groups that skip this spend week 6 arguing about what they were supposed to build.
 
-- [ ] Re-read the question at the top of this file. Write down, in your own words, what it is actually asking
+- [x] Re-read the question at the top of this file. Write down, in your own words, what it is actually asking
 - [ ] Listed the specific sub-questions you will need to answer to answer the main one
 - [ ] Decided what "done" looks like — what would a finished dashboard show?
 - [ ] Identified who the audience is and what decision they would make with your answer
