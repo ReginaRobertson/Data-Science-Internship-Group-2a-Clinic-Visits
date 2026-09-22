@@ -110,7 +110,7 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 
 | *Everyone types their own name. If you have not read this document, do not add your name to it — the point is that the whole group agrees, not that the form is filled in.* |
 | :---- |
-|   |
+| Regina Robetson  |
 
 | Done when Every member of group2a could explain this project to a stranger in two sentences, without looking at this file. Next: week 2 — open week2\_profiling\_clinic.sql and work through it from the top. Do not skip to the interesting queries. |
 | :---- |
