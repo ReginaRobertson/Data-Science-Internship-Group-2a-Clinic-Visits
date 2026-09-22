@@ -27,7 +27,7 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 
 **2\. What we think the question is actually asking**
 
-| *Rewrite it in your own words. If your version is just the original with synonyms swapped in, you have not understood it yet. Say what someone believes, and what would change their mind.* |
+| *Staff believe they already know which departments are the worst for waiting, but those opinions contradict each other thus, nobody has actually checked. We're using the real visit records to find out, objectively, which departments genuinely have the longest waits, whether that changes depending on the type of visit (Outpatient, Follow-up, Emergency) and whether it's been getting better or worse across the two years the data covers. If the data disagrees with what staff currently believe, that's the finding that changes minds.* |
 | :---- |
 |   |
 
@@ -110,7 +110,7 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 
 | *Everyone types their own name. If you have not read this document, do not add your name to it — the point is that the whole group agrees, not that the form is filled in.* |
 | :---- |
-|   |
+| Regina Robetson  |
 
 | Done when Every member of group2a could explain this project to a stranger in two sentences, without looking at this file. Next: week 2 — open week2\_profiling\_clinic.sql and work through it from the top. Do not skip to the interesting queries. |
 | :---- |
