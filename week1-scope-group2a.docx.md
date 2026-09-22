@@ -4,9 +4,9 @@
 
 | Group | group2a |
 | :---- | :---- |
-| **Date agreed** |  |
+| **Date agreed** |17th September,2026|
 | **Who was in the discussion** |  |
-| **Phase lead for week 1** |  |
+| **Phase lead for week 1** | Margaret Isliker |
 
 | The question you were given Which departments have the longest patient wait times, and how does that vary by visit type and over time? |
 | :---- |

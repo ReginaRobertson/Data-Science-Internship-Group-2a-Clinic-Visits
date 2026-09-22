@@ -50,7 +50,7 @@ A different person leads each phase, so nobody specialises by accident and every
 
 | Phase | Weeks | Lead |
 |---|---|---|
-| Scope | 1 | |
+| Scope | 1 | Margaret Isliker|
 | SQL profiling | 2 | |
 | Python cleaning | 3 | |
 | Data modelling | 4 | |
