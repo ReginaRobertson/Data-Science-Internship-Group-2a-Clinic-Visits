@@ -35,7 +35,7 @@ Each week has a **Deliverable** and a **Done when** line. If you cannot honestly
 
 ### As a group
 
-- [ ] Created the group repository on GitHub and added every member
+- [x] Created the group repository on GitHub and added every member
 - [ ] Everyone has cloned it and made at least one commit
 - [x] Agreed a communication channel and a weekly working time
 - [ ] Agreed who leads each phase (see the rota below)
