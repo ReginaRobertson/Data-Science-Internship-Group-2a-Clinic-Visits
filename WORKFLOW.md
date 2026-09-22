@@ -39,7 +39,7 @@ Each week has a **Deliverable** and a **Done when** line. If you cannot honestly
 - [ ] Everyone has cloned it and made at least one commit
 - [x] Agreed a communication channel and a weekly working time
 - [ ] Agreed who leads each phase (see the rota below)
-- [ ] Read the project brief together — all of it, aloud if necessary
+- [x] Read the project brief together — all of it, aloud if necessary
 
 **Deliverable:** a repository with every member's name in the commit history.  
 **Done when:** every single person has connected to the database on their own machine. Not the group lead on everyone's behalf.
