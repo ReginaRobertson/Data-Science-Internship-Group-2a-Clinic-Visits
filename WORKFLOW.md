@@ -65,7 +65,7 @@ The lead is not the only person doing the work. They are the person who makes su
 
 **Goal:** agree exactly what you are answering before touching data. Groups that skip this spend week 6 arguing about what they were supposed to build.
 
-- [ ] Re-read the question at the top of this file. Write down, in your own words, what it is actually asking
+- [x] Re-read the question at the top of this file. Write down, in your own words, what it is actually asking
 - [ ] Listed the specific sub-questions you will need to answer to answer the main one
 - [ ] Decided what "done" looks like — what would a finished dashboard show?
 - [ ] Identified who the audience is and what decision they would make with your answer
