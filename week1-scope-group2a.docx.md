@@ -46,8 +46,9 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 3\.  Are waits getting better or worse over the two years?
 
 | *Our sub-questions*:  |
+| :---- |
 
-| *1\. Which departments have the longest average and median wait and how big is the gap between the best and worst?
+1\. Which departments have the longest average and median wait and how big is the gap between the best and worst?
 
 2\. Do emergency visits wait less than routine (Outpatient/Follow-up) visits, as they should, in every department or only some?
 
@@ -55,9 +56,8 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 
 4\. Within the worst-performing departments, is one visit type driving the problem or is it bad across the board?
 
-5\. Is the "worst three" ranking stable month to month or does it shift (e.g. seasonal spikes)?* |
-| :---- |
-|   |
+5\. Is the "worst three" ranking stable month to month or does it shift (e.g. seasonal spikes)?* 
+
 
 **4\. Who this is for, and what they would do with it**
 
