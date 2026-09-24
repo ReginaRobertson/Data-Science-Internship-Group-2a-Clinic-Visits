@@ -5,7 +5,7 @@
 | Group | group2a |
 | :---- | :---- |
 | **Date agreed** |17th September,2026, 24th September, 2026|
-| **Who was in the discussion** |  |
+| **Who was in the discussion** | Bright Osei, Margaret Isliker, Regina Robertson, Betty Esi Sam, Winston Kwabena Benneh, Richard Antwi Adjei |
 | **Phase lead for week 1** | Margaret Isliker, Regina Robertson|
 
 | The question you were given Which departments have the longest patient wait times, and how does that vary by visit type and over time? |
@@ -21,7 +21,7 @@ Have your tables open in DBeaver while you talk. Not to analyse anything, just t
 
 **1\. The situation**
 
-A clinic with eight departments is getting complaints about waiting. Staff have opinions about which departments are worst, but the opinions disagree. The visit records have never been analysed.
+A clinic with eight departments is getting complaints about waiting. Staff have opinions about which departments are worst, but the opinions disagree. The visit records have never been analyzed.
 
 Your audience is **the clinic administrator**. They are not an analyst. Whatever you build has to make sense to them without you standing next to it explaining.
 
@@ -135,7 +135,7 @@ We are also encouraged to learn it on Youtube|
 
 | *Everyone types their own name. If you have not read this document, do not add your name to it — the point is that the whole group agrees, not that the form is filled in.* |
 | :---- |
-| Regina Robertson  |
+| Regina Robertson, Bright Osei, Margaret Isliker, Betty Esi Sam, Winston Kwabena Benneh, Richard Antwi Adjei|
 
 | Done when Every member of group2a could explain this project to a stranger in two sentences, without looking at this file. Next: week 2 — open week2\_profiling\_clinic.sql and work through it from the top. Do not skip to the interesting queries. |
 | :---- |
