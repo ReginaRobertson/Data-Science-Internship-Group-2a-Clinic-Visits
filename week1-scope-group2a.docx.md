@@ -56,13 +56,13 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 
 | *What decision would the clinic administrator make differently if they had your answer? If you cannot name a decision, the dashboard will end up as decoration — and charts nobody acts on score badly however pretty they are.* |
 | :---- |
-| **The decision they would make:**  |
+| **The decision they would make:**  The clinic administrator can stop relying on staff opinions that disagree with each other and instead prioritize fixes such as staffing, scheduling or process changes for the departments the data actually shows are worst.|
 
 **5\. What "done" looks like**
 
 | *Describe the finished dashboard in plain sentences, before building anything. What can someone see? What can they filter by? What could they say after ten seconds of looking?* |
 | :---- |
-| **Our dashboard will let the clinic administrator:**  |
+| **Our dashboard will let the clinic administrator:** See, at a glance and without explanation, which departments have the longest wait times, filter that view by visit type and see how each department's wait time has trended over 2024–2025. Within ten seconds they should be able to name the worst department, whether it's improving and whether a specific visit type is the cause. |
 
 **6\. What is out of scope**
 
