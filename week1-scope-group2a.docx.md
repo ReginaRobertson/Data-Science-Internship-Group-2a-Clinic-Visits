@@ -47,7 +47,8 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 
 | Our sub-questions:  |
 |:---- |
-| *1. Which departments have the longest average and median wait and how big is the gap between the best and worst? 
+| 
+*1. Which departments have the longest average and median wait and how big is the gap between the best and worst? 
 2. Do emergency visits wait less than routine (Outpatient/Follow-up) visits, as they should, in every department or only some?
 3. Are wait times getting better, worse or staying flat across 2024–2025, department by department?
 4. Within the worst-performing departments, is one visit type driving the problem or is it bad across the board?
