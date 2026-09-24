@@ -125,9 +125,7 @@ Some join the meeting without saying a word from start to end|  |
 | :---- | :---- |
 | **Risk** | **What we will do about it** |
 | Not everyone is available at the same times  |  We encourage ourselves, We tried to record for those who have network issues |
-| Most of us are new to Power BI  |  
-We will use one of our meetings to learn it 
-We are also encouraged to learn it on Youtube|
+| Most of us are new to Power BI  |  We will use one of our meetings to learn it. We are also encouraged to learn it on Youtube|
 |   |   |
 |   |   |
 
