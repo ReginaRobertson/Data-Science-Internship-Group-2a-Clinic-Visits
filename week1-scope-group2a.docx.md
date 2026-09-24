@@ -37,13 +37,6 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 | :---- |
 | *Specific enough to be answerable. Not "look at wait time" but something like: Which three departments have the longest average wait, and is the gap widening or narrowing across 2024 and 2025?* |
 
-**Starting points — keep them, change them, or delete them:**
-
-1\.  Which departments have the longest waits, and by how much?
-
-2\.  Do emergency visits wait less than routine ones, as they should?
-
-3\.  Are waits getting better or worse over the two years?
 
 | *Our sub-questions*:  |
 | :---- |
