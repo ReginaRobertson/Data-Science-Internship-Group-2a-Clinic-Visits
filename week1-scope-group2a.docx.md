@@ -87,13 +87,12 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 | *One or two lines each. Anything that already looks odd, any column you do not understand, anything you expected to find and did not.* |
 | :---- |
 | **First impressions from looking at the tables:** 
-Here's a concise version — one or two lines each, no code, ready to paste:
 
-> - `visit_date` looks inconsistent: the min/max returned two different date formats, suggesting that the data is stored as text rather than a real date, so it cannot be trusted for sorting or filtering yet.
-> - `visit_type` has 13 distinct values instead of the 3 we expected (Outpatient, Follow-up, Emergency), caused by mixed capitalization and stray whitespace, plus 1,508 blank rows.
-> - There are 100 more rows than distinct `visit_id`s, meaning some visits appear to be duplicated.
-> - `wait_minutes` includes a negative value (-209), which isn't physically possible for a real patient.
-> - `visits` only stores `department_id`, not a name; we had to join to `departments` to see anything readable.|
+- `visit_date` looks inconsistent: the min/max returned two different date formats, suggesting that the data is stored as text rather than a real date, so it cannot be trusted for sorting or filtering yet.
+- `visit_type` has 13 distinct values instead of the 3 we expected (Outpatient, Follow-up, Emergency), caused by mixed capitalization and stray whitespace plus 1,508 blank rows.
+- There are 100 more rows than distinct `visit_id`s, meaning some visits appear to be duplicated.
+- `wait_minutes` includes a negative value (-209), which isn't physically possible for a real patient.
+- `visits` only stores `department_id`, not a name; we had to join to `departments` to see anything readable.|
 
 
 | **Questions we have about the data — bring these to the call:**  
@@ -119,11 +118,16 @@ Here's a concise version — one or two lines each, no code, ready to paste:
 
 **9\. Risks we can already see**
 
-| *Being honest here is worth more than looking confident. Every group has these.* |  |
+| *Being honest here is worth more than looking confident. Every group has these.* 
+Network Issues
+Not everyone is available at the same times
+Some join the meeting without saying a word from start to end|  |
 | :---- | :---- |
 | **Risk** | **What we will do about it** |
-| Not everyone is available at the same times  |   |
-| Most of us are new to Power BI  |   |
+| Not everyone is available at the same times  |  We encourage ourselves, We tried to record for those who have network issues |
+| Most of us are new to Power BI  |  
+We will use one of our meetings to learn it 
+We are also encouraged to learn it on Youtube|
 |   |   |
 |   |   |
 
