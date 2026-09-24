@@ -116,20 +116,6 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 | :---- |
 | **When we meet as a group:** Thursdays at 8:30pm on Google Meet. |
 
-**9\. Risks we can already see**
-
-<<<<<<< HEAD
-| *Being honest here is worth more than looking confident. Every group has these.* 
-Network issues
-
-All been available at the scheduled time|  |
-| :---- | :---- |
-| **Risk** | **What we will do about it** |
-| Not everyone is available at the same times  |   |
-| Most of us are new to Power BI  | Yes  |
-|   |   |
-|   |   |
-=======
 **Being honest here is worth more than looking confident. Every group has these.** 
 - Network Issues.
 - Not everyone is available at the same times.
@@ -141,7 +127,6 @@ All been available at the scheduled time|  |
 | **Not everyone is available at the same times** | We encourage ourselves, We tried to record for those who have network issues |
 | **Most of us are new to Power BI**  |  We will use one of our meetings to learn it. We are also encouraged to learn it on Youtube |
 
->>>>>>> 28038f57292c95bfccd9f0149d97d69cc09d074e
 
 **Sign-off**
 
