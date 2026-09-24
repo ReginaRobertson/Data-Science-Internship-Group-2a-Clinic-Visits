@@ -56,7 +56,7 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 
 | *What decision would the clinic administrator make differently if they had your answer? If you cannot name a decision, the dashboard will end up as decoration — and charts nobody acts on score badly however pretty they are.* |
 | :---- |
-| **The decision they would make:**  The clinic administrator can stop relying on staff opinions that disagree with each other and instead prioritize fixes such as staffing, scheduling or process changes for the departments the data actually shows are worst.|
+| **The decision they would make:**  The clinic administrator can stop relying on staff opinions that disagree with each other and instead prioritize fixes such as staffing, scheduling or process changes for the departments the data actually that are worst.|
 
 **5\. What "done" looks like**
 
@@ -87,7 +87,6 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 | *One or two lines each. Anything that already looks odd, any column you do not understand, anything you expected to find and did not.* |
 | :---- |
 | **First impressions from looking at the tables:** 
-Here's a concise version — one or two lines each, no code, ready to paste:
 
 > - `visit_date` looks inconsistent: the min/max returned two different date formats, suggesting that the data is stored as text rather than a real date, so it cannot be trusted for sorting or filtering yet.
 > - `visit_type` has 13 distinct values instead of the 3 we expected (Outpatient, Follow-up, Emergency), caused by mixed capitalization and stray whitespace, plus 1,508 blank rows.
@@ -119,11 +118,14 @@ Here's a concise version — one or two lines each, no code, ready to paste:
 
 **9\. Risks we can already see**
 
-| *Being honest here is worth more than looking confident. Every group has these.* |  |
+| *Being honest here is worth more than looking confident. Every group has these.* 
+Network issues
+
+All been available at the scheduled time|  |
 | :---- | :---- |
 | **Risk** | **What we will do about it** |
 | Not everyone is available at the same times  |   |
-| Most of us are new to Power BI  |   |
+| Most of us are new to Power BI  | Yes  |
 |   |   |
 |   |   |
 
