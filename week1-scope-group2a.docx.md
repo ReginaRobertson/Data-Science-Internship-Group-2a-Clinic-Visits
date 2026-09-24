@@ -27,7 +27,7 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 
 **2\. What we think the question is actually asking**
 
-| *Staff believe they already know which departments are the worst for waiting, but those opinions contradict each other. Thus, nobody has actually checked. We're using the real visit records to find out, objectively, which departments genuinely have the longest waits, whether that changes depending on the type of visit (Outpatient, Follow-up, Emergency) and whether it's been getting better or worse across the two years the data covers. If the data disagrees with what staff currently believe, that's the finding that changes minds.* |
+| *Staff believe they already know which departments are the worst for waiting, but those opinions contradict each other thus, nobody has actually checked. We're using the real visit records to find out, objectively, which departments genuinely have the longest waits, whether that changes depending on the type of visit (Outpatient, Follow-up, Emergency) and whether it's been getting better or worse across the two years the data covers. If the data disagrees with what staff currently believe, that's the finding that changes minds.* |
 | :---- |
 |   |
 
