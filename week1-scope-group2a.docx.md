@@ -106,8 +106,8 @@ Here's a concise version — one or two lines each, no code, ready to paste:
 | *A different person leads each phase. The lead is not the only one working — they are the person who makes sure it happens and who speaks for the group on that week's call. Encourage the least confident people to take an early phase.* |  |  |
 | :---- | :---- | :---- |
 | **Phase** | **Weeks** | **Lead** |
-| **Scope** | 1 |  |
-| **SQL profiling** | 2 |  |
+| **Scope** | 1 |  Margaret Isliker, Regina Robertson|
+| **SQL profiling** | 2 | Margaret Isliker, Regina Robertson |
 | **Python cleaning** | 3 | Regina Robertson |
 | **Data modelling** | 4 |  |
 | **Dashboard build** | 5–6 |  |
