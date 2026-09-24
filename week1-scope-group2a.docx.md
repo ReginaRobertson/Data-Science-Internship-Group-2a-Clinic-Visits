@@ -118,7 +118,7 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 
 **9\. Risks we can already see**
 
-| *Being honest here is worth more than looking confident. Every group has these.* |
+| **Being honest here is worth more than looking confident. Every group has these.** |
 - Network Issues.
 - Not everyone is available at the same times.
 -  Some join the meeting without saying a word from start to end.
