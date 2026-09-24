@@ -86,8 +86,20 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 
 | *One or two lines each. Anything that already looks odd, any column you do not understand, anything you expected to find and did not.* |
 | :---- |
-| **First impressions from looking at the tables:**  |
-| **Questions we have about the data — bring these to the call:**  |
+| **First impressions from looking at the tables:** 
+Here's a concise version — one or two lines each, no code, ready to paste:
+
+> - `visit_date` looks inconsistent: the min/max returned two different date formats, suggesting that the data is stored as text rather than a real date, so it cannot be trusted for sorting or filtering yet.
+> - `visit_type` has 13 distinct values instead of the 3 we expected (Outpatient, Follow-up, Emergency), caused by mixed capitalization and stray whitespace, plus 1,508 blank rows.
+> - There are 100 more rows than distinct `visit_id`s, meaning some visits appear to be duplicated.
+> - `wait_minutes` includes a negative value (-209), which isn't physically possible for a real patient.
+> - `visits` only stores `department_id`, not a name; we had to join to `departments` to see anything readable.|
+
+
+| **Questions we have about the data — bring these to the call:**  
+- Why is there negative wait time, is it a data entry error or a system logging issue?
+- Are the 100 duplicate rows exact duplicates or do they differ in any field (which would suggest a different cause)?
+- What is causing the 1,508 blank `visit_type` values; a specific date range, department or source system?|
 
 **8\. Who leads which phase**
 
@@ -96,14 +108,14 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 | **Phase** | **Weeks** | **Lead** |
 | **Scope** | 1 |  |
 | **SQL profiling** | 2 |  |
-| **Python cleaning** | 3 |  |
+| **Python cleaning** | 3 | Regina Robertson |
 | **Data modelling** | 4 |  |
 | **Dashboard build** | 5–6 |  |
 | **Presentation** | 7–8 |  |
 
-| How we communicate:  |
+| How we communicate: WhatsApp Group |
 | :---- |
-| **When we meet as a group:**  |
+| **When we meet as a group:** Thursdays at 8:30pm on Google Meet. |
 
 **9\. Risks we can already see**
 
@@ -119,7 +131,7 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 
 | *Everyone types their own name. If you have not read this document, do not add your name to it — the point is that the whole group agrees, not that the form is filled in.* |
 | :---- |
-| Regina Robetson  |
+| Regina Robertson  |
 
 | Done when Every member of group2a could explain this project to a stranger in two sentences, without looking at this file. Next: week 2 — open week2\_profiling\_clinic.sql and work through it from the top. Do not skip to the interesting queries. |
 | :---- |
