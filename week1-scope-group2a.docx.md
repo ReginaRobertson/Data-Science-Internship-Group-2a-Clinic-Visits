@@ -5,7 +5,7 @@
 | Group | group2a |
 | :---- | :---- |
 | **Date agreed** |17th September,2026, 24th September, 2026|
-| **Who was in the discussion** |  |
+| **Who was in the discussion** | Bright Osei, Margaret Isliker, Regina Robertson, Betty Esi Sam, Winston Kwabena Benneh, Richard Antwi Adjei |
 | **Phase lead for week 1** | Margaret Isliker, Regina Robertson|
 
 | The question you were given Which departments have the longest patient wait times, and how does that vary by visit type and over time? |
@@ -21,7 +21,7 @@ Have your tables open in DBeaver while you talk. Not to analyse anything, just t
 
 **1\. The situation**
 
-A clinic with eight departments is getting complaints about waiting. Staff have opinions about which departments are worst, but the opinions disagree. The visit records have never been analysed.
+A clinic with eight departments is getting complaints about waiting. Staff have opinions about which departments are worst, but the opinions disagree. The visit records have never been analyzed.
 
 Your audience is **the clinic administrator**. They are not an analyst. Whatever you build has to make sense to them without you standing next to it explaining.
 
@@ -88,11 +88,11 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 | :---- |
 | **First impressions from looking at the tables:** 
 
-> - `visit_date` looks inconsistent: the min/max returned two different date formats, suggesting that the data is stored as text rather than a real date, so it cannot be trusted for sorting or filtering yet.
-> - `visit_type` has 13 distinct values instead of the 3 we expected (Outpatient, Follow-up, Emergency), caused by mixed capitalization and stray whitespace, plus 1,508 blank rows.
-> - There are 100 more rows than distinct `visit_id`s, meaning some visits appear to be duplicated.
-> - `wait_minutes` includes a negative value (-209), which isn't physically possible for a real patient.
-> - `visits` only stores `department_id`, not a name; we had to join to `departments` to see anything readable.|
+- `visit_date` looks inconsistent: the min/max returned two different date formats, suggesting that the data is stored as text rather than a real date, so it cannot be trusted for sorting or filtering yet.
+- `visit_type` has 13 distinct values instead of the 3 we expected (Outpatient, Follow-up, Emergency), caused by mixed capitalization and stray whitespace plus 1,508 blank rows.
+- There are 100 more rows than distinct `visit_id`s, meaning some visits appear to be duplicated.
+- `wait_minutes` includes a negative value (-209), which isn't physically possible for a real patient.
+- `visits` only stores `department_id`, not a name; we had to join to `departments` to see anything readable.|
 
 
 | **Questions we have about the data — bring these to the call:**  
@@ -118,6 +118,7 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 
 **9\. Risks we can already see**
 
+<<<<<<< HEAD
 | *Being honest here is worth more than looking confident. Every group has these.* 
 Network issues
 
@@ -128,12 +129,25 @@ All been available at the scheduled time|  |
 | Most of us are new to Power BI  | Yes  |
 |   |   |
 |   |   |
+=======
+**Being honest here is worth more than looking confident. Every group has these.** 
+- Network Issues.
+- Not everyone is available at the same times.
+- Some join the meeting without saying a word from start to end.
+
+
+| **Risk** | **What we will do about it** |
+| :---- | :---- |
+| **Not everyone is available at the same times** | We encourage ourselves, We tried to record for those who have network issues |
+| **Most of us are new to Power BI**  |  We will use one of our meetings to learn it. We are also encouraged to learn it on Youtube |
+
+>>>>>>> 28038f57292c95bfccd9f0149d97d69cc09d074e
 
 **Sign-off**
 
 | *Everyone types their own name. If you have not read this document, do not add your name to it — the point is that the whole group agrees, not that the form is filled in.* |
 | :---- |
-| Regina Robertson  |
+| Regina Robertson, Bright Osei, Margaret Isliker, Betty Esi Sam, Winston Kwabena Benneh, Richard Antwi Adjei|
 
 | Done when Every member of group2a could explain this project to a stranger in two sentences, without looking at this file. Next: week 2 — open week2\_profiling\_clinic.sql and work through it from the top. Do not skip to the interesting queries. |
 | :---- |
