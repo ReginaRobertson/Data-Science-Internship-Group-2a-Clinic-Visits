@@ -69,7 +69,12 @@ Your audience is **the clinic administrator**. They are not an analyst. Whatever
 | *This section saves you in week 6, when someone has a good idea that would take three weeks. Write down what you are deliberately not doing, so you can point at it.* |
 | :---- |
 | *Worth excluding for your domain: Diagnosing why waits are long — you can show where, not why. Staffing recommendations.* |
-| **We are NOT:**  |
+| **We are NOT:** 
+- Diagnosing *why* waits are long (staffing levels, process breakdowns) but we will show *where* not *why*
+- Making staffing recommendations
+- Forecasting or predicting future wait times
+- Analyzing consultation fee/revenue data, unless it turns out directly relevant
+- Modelling patient demographics (age, sex, region, insurance) as a driver, unless a real signal shows up |
 
 **7\. Our data**
 
