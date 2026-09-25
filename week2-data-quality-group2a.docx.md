@@ -4,8 +4,8 @@
 
 | Group | group2a |
 | :---- | :---- |
-| **Phase lead this week** |  |
-| **Who worked on it** |  |
+| **Phase lead this week** | Regina Robertson  |
+| **Who worked on it** | Regina Robertson |
 | **Date completed** |  |
 
 | Your question Which departments have the longest patient wait times, and how does that vary by visit type and over time? |
