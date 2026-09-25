@@ -17,6 +17,7 @@ This is the single most important thing you produce before week 3\. Week 3 is cl
 
 Work through your query pack from the top. It is called week2\_profiling\_clinic.sql and it has around twenty queries in the order you need them. Do not skip to the interesting ones.
 
+*Fill in every box. Where a box asks for a number, give the number — not "some" or "a few*.
 
 | A group that writes "the data looks fine" has not done week 2\. The problems in this dataset were put there deliberately. There are six kinds. If you have not found all six, keep looking. |
 | :---- |
