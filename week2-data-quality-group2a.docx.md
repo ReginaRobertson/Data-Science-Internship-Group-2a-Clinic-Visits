@@ -28,12 +28,12 @@ Row counts for all four tables. Confirm the fact table against the number on you
 
 | SELECT 'visits' AS table\_name, count(\*) FROM raw\_clinic.visits UNION ALL SELECT 'patients', count(\*) FROM raw\_clinic.patients UNION ALL SELECT 'doctors', count(\*) FROM raw\_clinic.doctors UNION ALL SELECT 'departments', count(\*) FROM raw\_clinic.departments; |  |
 | :---- | :---- |
-| **visits  (expect 25,100)** |  |
-| **patients  (expect 900\)** |  |
-| **doctors  (expect 40\)** |  |
-| **departments  (expect 8\)** |  |
+| **visits  (expect 25,100)** | 25,100 |
+| **patients  (expect 900\)** | 900  |
+| **doctors  (expect 40\)** | 40 |
+| **departments  (expect 8\)** | 8 |
 
-| How the four tables join together — which column links to which:  |
+| How the four tables join together — which column links to which: visits.patient_id → patients.patient_id, visits.doctor_id → doctors.doctor_id and visits.department_id → departments.department_id. visits is the fact table (one row per visit); patients, doctors and departments are the dimension tables it joins out to for names and details. |
 | :---- |
 
 **2\. The six problems**
@@ -42,14 +42,13 @@ One row per problem. The middle column is what you measured. The right column is
 
 | The problem | What we found (numbers) | What we will do, and why |
 | :---- | :---- | :---- |
-| **Missing values** |   |   |
-| **Duplicate rows** |   |   |
-| **Inconsistent categories** |   |   |
-| **Date formats** |   |   |
-| **Impossible values** |   |   |
-| **Orphan keys** |   |   |
+| **Missing values** | visit_type: 1,508 |   |
+| **Duplicate rows** | distinct visit_id: 100  |  we will drop or investigate the 100 repeated visit_ids before week 4 |
+| **Inconsistent categories** | visit_type has 13 raw values but only 3 real categories (Outpatient, Follow-up, Emergency)  | We will standardize them with TRIM() + consistent casing in week 3; otherwise Power BI will treats them as different bars on the same chart  |
+| **Date formats** | visit_date is stored as TEXT. 4 formats present: YYYY-MM-DD (20,566), DD/MM/YYYY (1,558), YYYY/MM/DD (1,505), DD-Mon-YYYY (1,471)  | We will parse every row into a single real DATE type in week 3, reading slash-format dates as DD/MM/YYYY.  |
+| **Impossible values** | 51 rows have negative wait_minutes |  Negative wait times are impossible so we will check if there's a pattern (same department, same date range, same data source) before we will decide to either correct or drop those rows before any average or median is calculated |
+| **Orphan keys** |  62 visits have a patient_id with no matching row in patients. |  Since our question doesn't depend on patients, these 62 rows stay usable. We will tag the patient link as "Unknown" in week 3 rather than drop them. |
 
-*Use the space below if any of those need more than a line.*
 
 |   |
 | :---- |
