@@ -66,12 +66,12 @@ The lead is not the only person doing the work. They are the person who makes su
 **Goal:** agree exactly what you are answering before touching data. Groups that skip this spend week 6 arguing about what they were supposed to build.
 
 - [x] Re-read the question at the top of this file. Write down, in your own words, what it is actually asking
-- [ ] Listed the specific sub-questions you will need to answer to answer the main one
-- [ ] Decided what "done" looks like — what would a finished dashboard show?
-- [ ] Identified who the audience is and what decision they would make with your answer
-- [ ] Listed what is **out of scope** — things you are deliberately not doing
-- [ ] Looked at each of your four tables in the SQL client, just to see what is there
-- [ ] Written `scope.md` and committed it
+- [x] Listed the specific sub-questions you will need to answer to answer the main one
+- [x] Decided what "done" looks like — what would a finished dashboard show?
+- [x] Identified who the audience is and what decision they would make with your answer
+- [x] Listed what is **out of scope** — things you are deliberately not doing
+- [x] Looked at each of your four tables in the SQL client, just to see what is there
+- [x] Written `scope.md` and committed it
 
 **Deliverable:** `scope.md` — one page. Your question, your sub-questions, success criteria, out of scope, phase leads.  
 **Done when:** every group member could explain the project to a stranger in two sentences.
@@ -94,22 +94,22 @@ Work through `week2_profiling_clinic.sql` from top to bottom. Do not skip to the
 
 ### The seven things you must be able to answer
 
-- [ ] How many rows are in each of the four tables?
-- [ ] Which columns have missing values, and how many in each?
-- [ ] How many duplicate rows are there, and in which table?
-- [ ] How many *real* categories are hiding behind the messy `visit_type` values?
-- [ ] Which date formats appear in `visit_date`, and how many rows use each?
-- [ ] How many impossible values are there — negative wait times?
-- [ ] How many orphan keys — patient_id values with no matching patient?
+- [x] How many rows are in each of the four tables?
+- [x] Which columns have missing values, and how many in each?
+- [x] How many duplicate rows are there, and in which table?
+- [x] How many *real* categories are hiding behind the messy `visit_type` values?
+- [x] Which date formats appear in `visit_date`, and how many rows use each?
+- [x] How many impossible values are there — negative wait times?
+- [x] How many orphan keys — patient_id values with no matching patient?
 
 ### Also
 
-- [ ] Worked out how the four tables join together — which column links to which
-- [ ] Noticed what happens when you sort the date column as text (query 9). Understood why
-- [ ] Ran the monthly rollup (query 10) and worked out how many rows it silently discards
+- [x] Worked out how the four tables join together — which column links to which
+- [x] Noticed what happens when you sort the date column as text (query 9). Understood why
+- [x] Ran the monthly rollup (query 10) and worked out how many rows it silently discards
 - [ ] Decided, as a group, what you will do about each problem — and written down why
-- [ ] Committed your queries to `sql/`
-- [ ] Written and committed `data_quality_notes.md`
+- [x] Committed your queries to `sql/`
+- [x] Written and committed `data_quality_notes.md`
 
 **Deliverable:** `data_quality_notes.md` answering all seven questions with numbers, plus your `.sql` files.  
 **Done when:** you can state the seven numbers from memory. A group that says "the data looks fine" has not done this week.
