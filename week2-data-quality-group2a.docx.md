@@ -45,7 +45,7 @@ One row per problem. The middle column is what you measured. The right column is
 | **Missing values** | visit_type: 1,508 |   |
 | **Duplicate rows** | distinct visit_id: 100  |  we will drop or investigate the 100 repeated visit_ids before week 4 |
 | **Inconsistent categories** | visit_type has 13 raw values but only 3 real categories (Outpatient, Follow-up, Emergency)  | We will standardize them with TRIM() + consistent casing in week 3; otherwise Power BI will treats them as different bars on the same chart  |
-| **Date formats** | visit_date is stored as TEXT. 4 formats present: YYYY-MM-DD (20,566), DD/MM/YYYY (1,558), YYYY/MM/DD (1,505), DD-Mon-YYYY (1,471)  | We will parse every row into a single real DATE type in week 3, reading slash-format dates as DD/MM/YYYY.  |
+| **Date formats** | visit_date is stored as Text. 4 formats present: YYYY-MM-DD (20,566), DD/MM/YYYY (1,558), YYYY/MM/DD (1,505), DD-Mon-YYYY (1,471)  | We will parse every row into a single real DATE type in week 3, reading slash-format dates as DD/MM/YYYY.  |
 | **Impossible values** | 51 rows have negative wait_minutes |  Negative wait times are impossible so we will check if there's a pattern (same department, same date range, same data source) before we will decide to either correct or drop those rows before any average or median is calculated |
 | **Orphan keys** |  62 visits have a patient_id with no matching row in patients. |  Since our question doesn't depend on patients, these 62 rows stay usable. We will tag the patient link as "Unknown" in week 3 rather than drop them. |
 
