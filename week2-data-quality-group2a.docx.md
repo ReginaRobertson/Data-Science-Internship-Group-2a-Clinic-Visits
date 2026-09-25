@@ -59,7 +59,7 @@ By the end of this week you must be able to say these without looking them up. W
 
 **a.  Rows in each table**
 
-|  |
+| visits: 25,100, patients: 900, doctors: 40 and departments: 8 |
 | :---- |
 
 **b.  Which columns have missing values, and how many in each**
