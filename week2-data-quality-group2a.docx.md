@@ -64,7 +64,7 @@ By the end of this week you must be able to say these without looking them up. W
 
 **b.  Which columns have missing values, and how many in each**
 
-| SELECT count(\*)                        AS total,        count(\*) \- count(visit\_type)   AS missing\_visit\_type FROM raw\_clinic.visits; |
+| SELECT count(\*)                        AS total,        count(\*) \- count(visit\_type)   AS missing\_visit\_type FROM raw\_clinic.visits; visit_date	0, visit_type	1,508, consultation_fee	0, patient_id	0, doctor_id	0 and department_id	0|
 | :---- |
 
 *Check every column, not just this one.*
