@@ -133,7 +133,7 @@ Now that you know what is wrong with it — honestly, not optimistically.
 
 **Which of the four tables do you actually need to answer your question? Do you need all four?** 
 
-| No, we don't need all four. Only visits and departments are required. visits contains wait_minutes, visit_type and visit_date (everything the question asks about) and departments is needed only to translate department_id into a readable name. patients and doctors aren't needed for this question. |
+No, we don't need all four. Only visits and departments are required. visits contains wait_minutes, visit_type and visit_date (everything the question asks about) and departments is needed only to translate department_id into a readable name. patients and doctors aren't needed for this question.
 | :---- |
 
 **Name one number that would be wrong today if you built a dashboard without fixing anything:**  Total visit count. The dashboard would show 25,100 total visits but only 25,000 are actually unique; 100 rows are exact duplicates of an existing visit_id, so every count, sum or average built on the raw data is inflated by those 100 extra rows.|
@@ -152,11 +152,10 @@ Turn section 2 into an ordered list of cleaning steps. This becomes your noteboo
 6. Tag the 62 orphan patient_id rows (no matching row in patients) as "Unknown" patient rather than dropping the visit. doctor_id and department_id are already fully clean, so no action is needed there. 
 
 **7\. Questions for the weekly call**
-| :---- |
+
 |1. Are the 100 duplicate rows exact duplicates in every column or do they differ somewhere (e.g. a re-entered wait time)? Worth checking before deciding whether to just delete or investigate case-by-case.
 
 2. Is there any acceptable upper bound for wait_minutes we should also flag as suspicious (e.g. is 209 minutes itself plausible or should we question the top end too)?
-
 
 3. If we label the 1,508 missing visit_type rows and 62 orphan patient_id rows as "Unknown" rather than dropping them, should "Unknown" visits be included in department-level wait-time averages? |
 
