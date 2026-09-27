@@ -114,7 +114,7 @@ We are reading all slash-separated dates (DD/MM/YYYY format) as day/month/year a
 
 Query 9 asks for the earliest and latest visit\_date. The answer is nonsense. Work out why before reading on, then write the explanation here.
 
-| **What we got, and why it happens:**|
+**What we got, and why it happens:**
 | visit_date is stored as TEXT, not a real DATE type, because the source mixes four different formats that wouldn't load cleanly as one type. Because it's text, MIN()/MAX() sort alphabetically, not chronologically so Week 1's result (01/01/2024 and 31-Oct-2025) isn't the true earliest or latest visit, just whichever strings happen to sort first/last as characters. The real date range can only be trusted once every row is parsed into a genuine date type in week 3.|
 | :---- |
 
