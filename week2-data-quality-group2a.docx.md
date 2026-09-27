@@ -50,7 +50,6 @@ One row per problem. The middle column is what you measured. The right column is
 | **Orphan keys** |  62 visits have a patient_id with no matching row in patients. |  Since our question doesn't depend on patients, these 62 rows stay usable. We will tag the patient link as "Unknown" in week 3 rather than drop them. |
 
 
-|   |
 
 
 **3\. The seven numbers**
