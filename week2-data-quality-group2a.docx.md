@@ -101,12 +101,9 @@ We are reading all slash-separated dates (DD/MM/YYYY format) as day/month/year a
 
 **g.  How many orphan keys**
 
-| SELECT count(\*) AS orphans FROM raw\_clinic.visits f LEFT JOIN raw\_clinic.patients d   ON f.patient\_id \= d.patient\_id WHERE d.patient\_id IS NULL;  |
-| :---- |
+| **SELECT count(\*) AS orphans FROM raw\_clinic.visits f LEFT JOIN raw\_clinic.patients d   ON f.patient\_id \= d.patient\_id WHERE d.patient\_id IS NULL;**  |
 
-*Check every foreign key, not just this one. A plain JOIN would silently drop these rows and your totals would be wrong with no error shown.*
-
-| patient_id: 62 orphan rows, doctor_id: 0 and department_id: 0 orphans. Only the patient link has orphan keys, the doctor and department links are fully clean. |
+ patient_id: 62 orphan rows, doctor_id: 0 and department_id: 0 orphans. Only the patient link has orphan keys, the doctor and department links are fully clean.
 | :---- |
 
 **4\. Two things the query pack wants you to notice**
@@ -125,7 +122,7 @@ Query 10 filters to rows already in YYYY-MM-DD form. How many rows does that qui
 **Rows discarded, and the consequence:**
 
 Filtering to only YYYY-MM-DD-formatted rows discards 4,534 rows (25,100 − 20,566) about 18% of the entire dataset, covering every row in DD/MM/YYYY, YYYY/MM/DD and DD-Mon-YYYY format. A dashboard built on this filtered query would understate visit counts and skew wait-time trends for any month or department with more non-standard-formatted dates than others, with no error or warning shown. This is why every row needs to be parsed into one consistent date type in week 3 before any time-based analysis is trustworthy.
-| :---- |
+
 
 **5\. Is this data ready to answer your question?**
 
@@ -134,7 +131,7 @@ Now that you know what is wrong with it — honestly, not optimistically.
 **Which of the four tables do you actually need to answer your question? Do you need all four?** 
 
 No, we don't need all four. Only visits and departments are required. visits contains wait_minutes, visit_type and visit_date (everything the question asks about) and departments is needed only to translate department_id into a readable name. patients and doctors aren't needed for this question.
-| :---- |
+
 
 **Name one number that would be wrong today if you built a dashboard without fixing anything:**  Total visit count. The dashboard would show 25,100 total visits but only 25,000 are actually unique; 100 rows are exact duplicates of an existing visit_id, so every count, sum or average built on the raw data is inflated by those 100 extra rows.
 
