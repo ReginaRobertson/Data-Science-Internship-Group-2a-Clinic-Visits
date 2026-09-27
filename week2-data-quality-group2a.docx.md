@@ -51,7 +51,7 @@ One row per problem. The middle column is what you measured. The right column is
 
 
 |   |
-| :---- |
+
 
 **3\. The seven numbers**
 
