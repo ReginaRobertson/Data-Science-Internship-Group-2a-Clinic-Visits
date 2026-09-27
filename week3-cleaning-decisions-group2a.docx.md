@@ -4,8 +4,8 @@
 
 | Group | group2a |
 | :---- | :---- |
-| **Phase lead this week** |  |
-| **Who worked on the notebook** |  |
+| **Phase lead this week** | Regina Robertson |
+| **Who worked on the notebook** | Regina Robertson |
 | **Date completed** |  |
 
 | What you are producing this week Clean tables in your group2a schema, a notebook that rebuilds them from scratch, and this record of every decision you made and why. |
