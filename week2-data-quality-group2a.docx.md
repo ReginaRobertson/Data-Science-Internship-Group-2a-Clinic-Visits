@@ -42,7 +42,7 @@ One row per problem. The middle column is what you measured. The right column is
 
 | The problem | What we found (numbers) | What we will do, and why |
 | :---- | :---- | :---- |
-| **Missing values** | visit_type: 1,508 |   |
+| **Missing values** | visit_type: 1,508 |  In week 3, we will label them as an explicit "Unknown" category rather than dropping the rows. The visits themselves are still real and contribute valid wait-time data; we just can't say what type of visit they were. |
 | **Duplicate rows** | distinct visit_id: 100  |  we will drop or investigate the 100 repeated visit_ids before week 4 |
 | **Inconsistent categories** | visit_type has 13 raw values but only 3 real categories (Outpatient, Follow-up, Emergency)  | We will standardize them with TRIM() + consistent casing in week 3; otherwise Power BI will treats them as different bars on the same chart  |
 | **Date formats** | visit_date is stored as text. 4 formats present: YYYY-MM-DD (20,566), DD/MM/YYYY (1,558), YYYY/MM/DD (1,505), DD-Mon-YYYY (1,471)  | We will parse every row into a single real DATE type in week 3, reading slash-format dates as DD/MM/YYYY.  |
