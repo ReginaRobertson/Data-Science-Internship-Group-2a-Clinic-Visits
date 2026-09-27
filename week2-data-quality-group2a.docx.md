@@ -76,13 +76,13 @@ By the end of this week you must be able to say these without looking them up. W
 
 | SELECT count(\*) \- count(DISTINCT visit\_id) AS extras FROM raw\_clinic.visits; |
 | :---- |
-|  |
+| 100 duplicate rows found in visits, identified by comparing the total row count (25,100) against the count of distinct visit_id values.  |
 
 **d.  How many real categories hide behind the messy visit\_type values**
 
 | SELECT count(DISTINCT visit\_type)               AS as\_stored,        count(DISTINCT upper(trim(visit\_type)))  AS actually FROM raw\_clinic.visits; |
 | :---- |
-| **As stored / actually — and which other text columns have the same problem:**  |
+| **As stored / actually — and which other text columns have the same problem:** 12 / 3 visit_type has 12 distinct raw values collapsing into 3 real categories (Outpatient, Follow-up, Emergency) once case and whitespace are normalized. The 1,508 missing rows are excluded from both counts since COUNT(DISTINCT) ignores NULLs. No other text column has this problem.|
 
 **e.  Which date formats appear in visit\_date, and how many rows use each**
 
