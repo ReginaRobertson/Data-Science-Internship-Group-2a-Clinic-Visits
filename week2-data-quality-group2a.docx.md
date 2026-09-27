@@ -86,7 +86,7 @@ By the end of this week you must be able to say these without looking them up. W
 
 **e.  Which date formats appear in visit\_date, and how many rows use each**
 
-|   |
+| Four date formats. Thus, YYYY-MM-DD, DD/MM/YYYY, YYYY/MM/DD and DD-Mon-YYYY  |
 | :---- |
 
 *Ambiguous dates like 03/04/2025 could be 3 April or 4 March. Nothing in the data proves which. State which reading you chose and stick to it — this is a real analyst decision and you will be asked to defend it.*
