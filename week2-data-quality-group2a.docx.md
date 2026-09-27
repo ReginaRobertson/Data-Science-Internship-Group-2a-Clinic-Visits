@@ -140,8 +140,8 @@ Now that you know what is wrong with it — honestly, not optimistically.
 
 Turn section 2 into an ordered list of cleaning steps. This becomes your notebook next week.
 
-| 1\. **We will parse visit_date into a single real date type, correctly handling all four formats found (YYYY-MM-DD, DD/MM/YYYY, YYYY/MM/DD, DD-Mon-YYYY) this unblocks every time-based part of the analysis.** |
 | :---- |
+| **1\.** We will parse visit_date into a single real date type, correctly handling all four formats found (YYYY-MM-DD, DD/MM/YYYY, YYYY/MM/DD, DD-Mon-YYYY) this unblocks every time-based part of the analysis. |
 | **2\.** Standardize the visit_type by trimming whitespace and normalizing case, collapsing the 12 raw variants into the 3 real categories (Outpatient, Follow-up, Emergency). |
 | **3\.** Label the 1,508 rows with missing visit_type as an explicit "Unknown" category rather than dropping them.  |
 | **4\.** Remove the 100 duplicate rows (identified by repeated visit_id), keeping one copy of each. |
@@ -149,13 +149,13 @@ Turn section 2 into an ordered list of cleaning steps. This becomes your noteboo
 | **6\.** Tag the 62 orphan patient_id rows (no matching row in patients) as "Unknown" patient rather than dropping the visit. doctor_id and department_id are already fully clean, so no action is needed there. |
 
 **7\. Questions for the weekly call**
-
+| :---- |
 |1. Are the 100 duplicate rows exact duplicates in every column or do they differ somewhere (e.g. a re-entered wait time)? Worth checking before deciding whether to just delete or investigate case-by-case.
 
 2. Is there any acceptable upper bound for wait_minutes we should also flag as suspicious (e.g. is 209 minutes itself plausible or should we question the top end too)?
 
-3.** If we label the 1,508 missing visit_type rows and 62 orphan patient_id rows as "Unknown" rather than dropping them, should "Unknown" visits be included in department-level wait-time averages?**  |
-| :---- |
+3. If we label the 1,508 missing visit_type rows and 62 orphan patient_id rows as "Unknown" rather than dropping them, should "Unknown" visits be included in department-level wait-time averages? |
+
 
 | Before you submit this Every .sql file you wrote is saved in your sql/ folder and pushed. This document is committed. Every number above is filled in with an actual figure. Data-quality findings can be shared openly with group2b — you will both hit the same potholes. Your analysis and your decisions stay yours. |
 | :---- |
