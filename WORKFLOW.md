@@ -124,13 +124,13 @@ Work through `week2_profiling_clinic.sql` from top to bottom. Do not skip to the
 
 ### In Colab
 
-- [ ] Connected to the database from a notebook (sqlalchemy + psycopg2)
-- [ ] Pulled `raw_clinic.visits` and the three dimension tables into pandas
-- [ ] Parsed `visit_date` into a real date type, handling all four formats
-- [ ] Decided and documented how you read ambiguous dates like `03/04/2025`
-- [ ] Standardised `visit_type` — trimmed whitespace, fixed casing
+- [x] Connected to the database from a notebook (sqlalchemy + psycopg2)
+- [x] Pulled `raw_clinic.visits` and the three dimension tables into pandas
+- [x] Parsed `visit_date` into a real date type, handling all four formats
+- [x] Decided and documented how you read ambiguous dates like `03/04/2025`
+- [x] Standardised `visit_type` — trimmed whitespace, fixed casing
 - [ ] Checked every other text column for the same problem
-- [ ] Removed duplicate rows
+- [x] Removed duplicate rows
 - [ ] Handled missing values — decided per column whether to drop, fill, or keep as "Unknown"
 - [ ] Dealt with the impossible values (negative wait times)
 - [ ] Dealt with the orphan keys — dropped, or kept with an "Unknown" placeholder
@@ -140,7 +140,7 @@ Work through `week2_profiling_clinic.sql` from top to bottom. Do not skip to the
 
 - [ ] Wrote cleaned tables into `group2a` (e.g. `group2a.visits_clean`)
 - [ ] Confirmed the row counts are what you expect after cleaning
-- [ ] Committed the notebook to `notebooks/`
+- [x] Committed the notebook to `notebooks/`
 - [ ] Updated `data_quality_notes.md` with what you decided and why
 
 **Deliverable:** a committed notebook, plus cleaned tables in `group2a`.  
