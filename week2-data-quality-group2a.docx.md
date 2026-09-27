@@ -89,8 +89,9 @@ By the end of this week you must be able to say these without looking them up. W
 *Ambiguous dates like 03/04/2025 could be 3 April or 4 March. Nothing in the data proves which. State which reading you chose and stick to it — this is a real analyst decision and you will be asked to defend it.*
 
 **Our reading of ambiguous dates, and why:** 
+
 We are reading all slash-separated dates (DD/MM/YYYY format) as day/month/year and applying this consistently across all 1,558 rows in this format. We chose this reading because we have confirmed it directly from the data: running a check for rows where the first number exceeds 12 returned real examples, including 29/07/2024, 27/08/2024 and 26/07/2025. Since no calendar has a 29th, 27th or 26th month, the first number in these dates must be the day, not the month. We are applying this DD/MM/YYYY reading consistently throughout the project. 
-| :---- |
+
 
 **f.  How many impossible values (negative wait times)**
 
@@ -115,8 +116,7 @@ We are reading all slash-separated dates (DD/MM/YYYY format) as day/month/year a
 Query 9 asks for the earliest and latest visit\_date. The answer is nonsense. Work out why before reading on, then write the explanation here.
 
 **What we got, and why it happens:**
-| visit_date is stored as TEXT, not a real DATE type, because the source mixes four different formats that wouldn't load cleanly as one type. Because it's text, MIN()/MAX() sort alphabetically, not chronologically so Week 1's result (01/01/2024 and 31-Oct-2025) isn't the true earliest or latest visit, just whichever strings happen to sort first/last as characters. The real date range can only be trusted once every row is parsed into a genuine date type in week 3.|
-| :---- |
+visit_date is stored as TEXT, not a real DATE type, because the source mixes four different formats that wouldn't load cleanly as one type. Because it's text, MIN()/MAX() sort alphabetically, not chronologically so Week 1's result (01/01/2024 and 31-Oct-2025) isn't the true earliest or latest visit, just whichever strings happen to sort first/last as characters. The real date range can only be trusted once every row is parsed into a genuine date type in week 3. :---- |
 
 **The monthly rollup that throws data away**
 
@@ -124,7 +124,7 @@ Query 10 filters to rows already in YYYY-MM-DD form. How many rows does that qui
 
 **Rows discarded, and the consequence:**
 
-|Filtering to only YYYY-MM-DD-formatted rows discards 4,534 rows (25,100 − 20,566) about 18% of the entire dataset, covering every row in DD/MM/YYYY, YYYY/MM/DD and DD-Mon-YYYY format. A dashboard built on this filtered query would understate visit counts and skew wait-time trends for any month or department with more non-standard-formatted dates than others, with no error or warning shown. This is why every row needs to be parsed into one consistent date type in week 3 before any time-based analysis is trustworthy. |
+Filtering to only YYYY-MM-DD-formatted rows discards 4,534 rows (25,100 − 20,566) about 18% of the entire dataset, covering every row in DD/MM/YYYY, YYYY/MM/DD and DD-Mon-YYYY format. A dashboard built on this filtered query would understate visit counts and skew wait-time trends for any month or department with more non-standard-formatted dates than others, with no error or warning shown. This is why every row needs to be parsed into one consistent date type in week 3 before any time-based analysis is trustworthy.
 | :---- |
 
 **5\. Is this data ready to answer your question?**
