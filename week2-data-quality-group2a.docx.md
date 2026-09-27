@@ -88,8 +88,8 @@ By the end of this week you must be able to say these without looking them up. W
 
 *Ambiguous dates like 03/04/2025 could be 3 April or 4 March. Nothing in the data proves which. State which reading you chose and stick to it — this is a real analyst decision and you will be asked to defend it.*
 
-| **Our reading of ambiguous dates, and why:**  |
-| We are reading all slash-separated dates (DD/MM/YYYY format) as day/month/year and applying this consistently across all 1,558 rows in this format. We chose this reading because we have confirmed it directly from the data: running a check for rows where the first number exceeds 12 returned real examples, including 29/07/2024, 27/08/2024 and 26/07/2025. Since no calendar has a 29th, 27th or 26th month, the first number in these dates must be the day, not the month. We are applying this DD/MM/YYYY reading consistently throughout the project. |
+**Our reading of ambiguous dates, and why:** 
+We are reading all slash-separated dates (DD/MM/YYYY format) as day/month/year and applying this consistently across all 1,558 rows in this format. We chose this reading because we have confirmed it directly from the data: running a check for rows where the first number exceeds 12 returned real examples, including 29/07/2024, 27/08/2024 and 26/07/2025. Since no calendar has a 29th, 27th or 26th month, the first number in these dates must be the day, not the month. We are applying this DD/MM/YYYY reading consistently throughout the project. 
 | :---- |
 
 **f.  How many impossible values (negative wait times)**
