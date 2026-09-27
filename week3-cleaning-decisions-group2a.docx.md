@@ -26,8 +26,8 @@ One row per problem from week 2\. What you did, and the reason. Numbers in the m
 
 | The problem | How many rows | What we did, and why |
 | :---- | :---- | :---- |
-| **Duplicate rows** |   |   |
-| **Inconsistent categories** |   |   |
+| **Duplicate rows** | 100  | We dropped them using drop_duplicates() on visit_id, keeping the first occurrence. This is because exact repeats would double-count visits and inflate any total or average. |
+| **Inconsistent categories** |  23,592 (all non-missing rows) | We standardized visit_type using .str.strip().str.title(), which removes extra whitespace and fixes inconsistent capitalization. This is because the same category was being stored in several different ways — for example, "Outpatient", "OUTPATIENT", "outpatient", and " Outpatient " were all treated as separate values, when they represent the same real category. Standardizing them ensures each visit type is counted once, correctly, instead of being split across multiple near-duplicate labels.   |
 | **Date formats** |   |   |
 | **Impossible values** |   |   |
 | **Orphan keys** |   |   |
