@@ -116,22 +116,28 @@ By the end of this week you must be able to say these without looking them up. W
 
 Query 9 asks for the earliest and latest visit\_date. The answer is nonsense. Work out why before reading on, then write the explanation here.
 
-| What we got, and why it happens:  visit_date is stored as TEXT, not a real DATE type, because the source mixes four different formats that wouldn't load cleanly as one type. Because it's text, MIN()/MAX() sort alphabetically, not chronologically so Week 1's result (01/01/2024 and 31-Oct-2025) isn't the true earliest/latest visit, just whichever strings happen to sort first/last as characters. The real date range can only be trusted once every row is parsed into a genuine date type in week 3.|
+| **What we got, and why it happens:**|
+| visit_date is stored as TEXT, not a real DATE type, because the source mixes four different formats that wouldn't load cleanly as one type. Because it's text, MIN()/MAX() sort alphabetically, not chronologically so Week 1's result (01/01/2024 and 31-Oct-2025) isn't the true earliest or latest visit, just whichever strings happen to sort first/last as characters. The real date range can only be trusted once every row is parsed into a genuine date type in week 3.|
 | :---- |
 
 **The monthly rollup that throws data away**
 
 Query 10 filters to rows already in YYYY-MM-DD form. How many rows does that quietly discard, and what would that have done to a dashboard built on it?
 
-| Rows discarded, and the consequence: Filtering to only YYYY-MM-DD-formatted rows discards 4,534 rows (25,100 − 20,566) about 18% of the entire dataset, covering every row in DD/MM/YYYY, YYYY/MM/DD and DD-Mon-YYYY format. A dashboard built on this filtered query would understate visit counts and skew wait-time trends for any month or department with more non-standard-formatted dates than others, with no error or warning shown. This is why every row needs to be parsed into one consistent date type in week 3 before any time-based analysis is trustworthy. |
+| **Rows discarded, and the consequence:** |
+
+|Filtering to only YYYY-MM-DD-formatted rows discards 4,534 rows (25,100 − 20,566) about 18% of the entire dataset, covering every row in DD/MM/YYYY, YYYY/MM/DD and DD-Mon-YYYY format. A dashboard built on this filtered query would understate visit counts and skew wait-time trends for any month or department with more non-standard-formatted dates than others, with no error or warning shown. This is why every row needs to be parsed into one consistent date type in week 3 before any time-based analysis is trustworthy. |
 | :---- |
 
 **5\. Is this data ready to answer your question?**
 
 Now that you know what is wrong with it — honestly, not optimistically.
 
-| Which of the four tables do you actually need to answer your question? Do you need all four? No, we don't need all four. Only visits and departments are required. visits contains wait_minutes, visit_type and visit_date (everything the question asks about) and departments is needed only to translate department_id into a readable name. patients and doctors aren't needed for this question. |
+| **Which of the four tables do you actually need to answer your question? Do you need all four?** | 
+
+| No, we don't need all four. Only visits and departments are required. visits contains wait_minutes, visit_type and visit_date (everything the question asks about) and departments is needed only to translate department_id into a readable name. patients and doctors aren't needed for this question. |
 | :---- |
+
 | **Name one number that would be wrong today if you built a dashboard without fixing anything:**  Total visit count. The dashboard would show 25,100 total visits but only 25,000 are actually unique; 100 rows are exact duplicates of an existing visit_id, so every count, sum or average built on the raw data is inflated by those 100 extra rows.|
 
 | **What must be fixed in week 3 before the model in week 4 will work:**  Four things, in order of how much they block the analysis: (1) parse visit_date into one consistent real date type across all four formats, since nothing time-based works until then; (2) standardize visit_type casing or whitespace so the 12 raw variants collapse into 3 real categories; (3) remove the 100 duplicate visit_id rows to avoid double-counting visits; (4) handle the 51 negative wait_minutes values, since they can't be included in any average or median as they stand currently.|
