@@ -34,8 +34,8 @@ Section 1 installs the libraries and asks for your password. Section 2 loads the
 **Name — connected? (one line per person, everybody listed)**
 
 Regina Robertson
-Bright Osei
 
+Bright Osei
 
 **If somebody cannot connect**
 
