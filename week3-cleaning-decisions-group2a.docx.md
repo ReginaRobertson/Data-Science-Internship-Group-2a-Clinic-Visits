@@ -75,15 +75,15 @@ The date range is now 1 January 2024 to 30 December 2025, two full calendar year
 
 Everything now in your group2a schema, with row counts. Power BI reads these next week, so they need to be right.
 
-| **Table name / rows / what it is: visits_clean, 25,000 rows**. 
+**Table name / rows / what it is: visits_clean, 25,000 rows**. 
 visits_clean, 25,000 rows. The fact table, where one row is one patient visit. Duplicates were removed and visit_date was parsed to a real date. The 50 negative wait_minutes values were set to NULL and the 62 orphan patient_id values were pointed at the Unknown patient record. It has 8 columns: visit_id, visit_date, patient_id, doctor_id, department_id, visit_type, wait_minutes and consultation_fee.
 
 patients_clean, 901 rows. The 900 patients, with sex and region standardized, plus one Unknown record (patient_id = -1) that the orphan visits point to.
 
 doctors_clean, 40 rows. The doctors dimension.
 
-departments_clean, 8 rows. The departments dimension.|
-| :---- |
+departments_clean, 8 rows. The departments dimension.
+
 
 **5\. Reproducibility check**
 
