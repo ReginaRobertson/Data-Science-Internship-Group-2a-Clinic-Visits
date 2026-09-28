@@ -35,7 +35,7 @@ Section 1 installs the libraries and asks for your password. Section 2 loads the
 
 Regina Robertson
 Bright Osei
-| :---- |
+
 
 **If somebody cannot connect**
 
