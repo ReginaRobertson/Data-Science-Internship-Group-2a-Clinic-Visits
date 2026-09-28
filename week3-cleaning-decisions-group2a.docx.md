@@ -28,8 +28,8 @@ One row per problem from week 2\. What you did, and the reason. Numbers in the m
 | :---- | :---- | :---- |
 | **Duplicate rows** | 100  | We dropped them using drop_duplicates() on visit_id, keeping the first occurrence. This is because exact repeats would double-count visits and inflate any total or average. |
 | **Inconsistent categories** |  23,592 (all non-missing rows) | We standardized visit_type using .str.strip().str.title(), which removes extra whitespace and fixes inconsistent capitalization. This is because the same category was being stored in several different ways — for example, "Outpatient", "OUTPATIENT", "outpatient", and " Outpatient " were all treated as separate values, when they represent the same real category. Standardizing them ensures each visit type is counted once, correctly, instead of being split across multiple near-duplicate labels.   |
-| **Date formats** |   |   |
-| **Impossible values** |   |   |
+| **Date formats** |  25,100 (all rows) | Parsed visit_date with pd.to_datetime(..., dayfirst=True), unifying all four raw text formats into one real date type; confirmed dayfirst=True is correct using rows like 29/07/2024  |
+| **Impossible values** | 51 |   |
 | **Orphan keys** |   |   |
 | **Missing values** |   |   |
 
