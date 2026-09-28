@@ -70,7 +70,14 @@ From section 10 of your notebook. Every number that changed needs an explanation
 
 Everything now in your group2a schema, with row counts. Power BI reads these next week, so they need to be right.
 
-| Table name / rows / what it is:  |
+| **Table name / rows / what it is: visits_clean, 25,000 rows**. 
+visits_clean, 25,000 rows. The fact table, where one row is one patient visit. Duplicates were removed and visit_date was parsed to a real date. The 50 negative wait_minutes values were set to NULL and the 62 orphan patient_id values were pointed at the Unknown patient record. It has 8 columns: visit_id, visit_date, patient_id, doctor_id, department_id, visit_type, wait_minutes and consultation_fee.
+
+patients_clean, 901 rows. The 900 patients, with sex and region standardized, plus one Unknown record (patient_id = -1) that the orphan visits point to.
+
+doctors_clean, 40 rows. The doctors dimension.
+
+departments_clean, 8 rows. The departments dimension.|
 | :---- |
 
 **5\. Reproducibility check**
@@ -87,15 +94,17 @@ A notebook that only works on one laptop, in the order that person happened to c
 
 Next week you build a star schema on these tables. Think ahead.
 
-| Which table will be your fact table, and what does one row represent?  |
+| **Which table will be your fact table, and what does one row represent?** visits_clean is the fact table. One row is one patient visit (25,000 rows) |
 | :---- |
-| **Which will be your dimensions?**  |
-| **Do any columns still need work before the model will hold together?**  |
-| **Anything you deliberately left alone, and why:**  |
+| **Which will be your dimensions?** departments_clean (8 rows) is the dimension our question needs, because it turns department_id into a department name. patients_clean (901 rows, including the Unknown record) and doctors_clean (40 rows) are also available as dimensions. We will build a date table ourselves in week 4 |
+| **Do any columns still need work before the model will hold together?** visit_date carries a time part (00:00:00), so we will convert it to a plain date before relating it to the date table. The column names need renaming for a non-analyst reader and the raw key columns will be hidden in the report view. We also need to confirm that patient_id is unique in patients_clean, so the relationship is one-to-many. |
+| **Anything you deliberately left alone, and why:** We left the 50 NULL wait_minutes values as they are, because we cannot know the true waits and filling them in would invent data. We kept the 1,500 Unknown visit_type rows and the 62 visits pointing at the Unknown patient record, so those real visits stay in the totals instead of being dropped. We did not investigate the high end of wait_minutes (the maximum is 209 minutes) or analyze consultation_fee, because our question does not depend on either. |
 
 **7\. Questions for the weekly call**
 
-|   |
+| 1. Should the Unknown visit_type rows appear in the department wait-time charts or be filtered out? Including them keeps 1,500 valid wait times, but they cannot be split by visit type.
+2. Is a wait of around 209 minutes plausible for this clinic or should we treat the top end as suspect too?
+3. Our question only uses visits and departments, so do we need patients and doctors in the week 4 model at all?  |
 | :---- |
 
 | Before you submit this Notebook committed to notebooks/ and runs from a fresh runtime. Clean tables visible in your schema. Every decision above has a reason attached. No password anywhere in the notebook. Cleaning approaches can be discussed openly with group2b. Your decisions and your reasoning stay yours. |
