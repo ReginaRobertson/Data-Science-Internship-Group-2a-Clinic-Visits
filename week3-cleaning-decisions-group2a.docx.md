@@ -47,23 +47,23 @@ From section 10 of your notebook. Every number that changed needs an explanation
 
 **Row count**
 
-| Before / after / difference:  |
+| Before / after / difference: 25100 /25000 / 100 |
 | :---- |
-| **Account for every row you lost — how many were duplicates, how many impossible, how many orphans. The numbers must add up:**  |
+| **Account for every row you lost — how many were duplicates, how many impossible, how many orphans. The numbers must add up:**  We lost 100 rows in total (25,100 to 25,000). All 100 were duplicates: exact copies of another row, sharing the same visit_id and we kept the first copy of each. Impossible values cost 0 rows, because the 50 negative wait_minutes were set to NULL and the rows stayed. Orphan keys cost 0 rows, because the 62 orphan patient_id values were repointed to an Unknown record. 100 duplicates + 0 impossible + 0 orphans = 100 rows lost, which matches the drop exactly.|
 
 **Categories in visit\_type**
 
-| Before / after:  |
+| Before / after:  12 distinct values as stored (13 groups if the blank rows are counted)/ 4 values: Outpatient, Follow-Up, Emergency and Unknown. Standardizing case and whitespace merged the 12 variants into the 3 real categories, and the fourth is the 'Unknown' label given to the 1,500 blank rows that remained after the duplicates were removed.|
 | :---- |
 
 **Missing values**
 
-| Before / after, and what accounts for the change:  |
+| Before / after, and what accounts for the change:  1,508 missing values, all in visit_type. Every other column was complete, including wait_minutes./ 50 missing values, all in wait_minutes. visit_type and every other column have 0, duplicates were removed,blanks were filled with 'Unknown'for visit_type and negative wait_minutes values were set to null. |
 | :---- |
 
 **Date range**
 
-| What the range is now, and how it compares with the nonsense you got in week 2:  |
+| What the range is now, and how it compares with the nonsense you got in week 2: The date range is now 1 January 2024 to 30 December 2025, two full calendar years, with nothing before 2024 and nothing in the future. In week 2 the text version gave 01/01/2024 to 31-Oct-2025. That result was wrong because visit_date was stored as text and text sorts character by character rather than by date. So "31-Oct-2025" came out as the latest value, even though the real latest visit is two months later, on 30 December 2025. Now that visit_date is a real date type, sorting is chronological and the problem is gone. We also checked each of the four raw formats against a strict parse, and every row matched, so the range is not distorted by any day and month being swapped. |
 | :---- |
 
 **4\. Tables you wrote back**
