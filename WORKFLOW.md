@@ -107,7 +107,7 @@ Work through `week2_profiling_clinic.sql` from top to bottom. Do not skip to the
 - [x] Worked out how the four tables join together — which column links to which
 - [x] Noticed what happens when you sort the date column as text (query 9). Understood why
 - [x] Ran the monthly rollup (query 10) and worked out how many rows it silently discards
-- [ ] Decided, as a group, what you will do about each problem — and written down why
+- [x] Decided, as a group, what you will do about each problem — and written down why
 - [x] Committed your queries to `sql/`
 - [x] Written and committed `data_quality_notes.md`
 
@@ -129,19 +129,19 @@ Work through `week2_profiling_clinic.sql` from top to bottom. Do not skip to the
 - [x] Parsed `visit_date` into a real date type, handling all four formats
 - [x] Decided and documented how you read ambiguous dates like `03/04/2025`
 - [x] Standardised `visit_type` — trimmed whitespace, fixed casing
-- [ ] Checked every other text column for the same problem
+- [x] Checked every other text column for the same problem
 - [x] Removed duplicate rows
-- [ ] Handled missing values — decided per column whether to drop, fill, or keep as "Unknown"
-- [ ] Dealt with the impossible values (negative wait times)
-- [ ] Dealt with the orphan keys — dropped, or kept with an "Unknown" placeholder
-- [ ] Re-ran your week 2 profiling checks on the cleaned data to prove the problems are gone
+- [x] Handled missing values — decided per column whether to drop, fill, or keep as "Unknown"
+- [x] Dealt with the impossible values (negative wait times)
+- [x] Dealt with the orphan keys — dropped, or kept with an "Unknown" placeholder
+- [x] Re-ran your week 2 profiling checks on the cleaned data to prove the problems are gone
 
 ### Writing back
 
-- [ ] Wrote cleaned tables into `group2a` (e.g. `group2a.visits_clean`)
-- [ ] Confirmed the row counts are what you expect after cleaning
+- [x] Wrote cleaned tables into `group2a` (e.g. `group2a.visits_clean`)
+- [x] Confirmed the row counts are what you expect after cleaning
 - [x] Committed the notebook to `notebooks/`
-- [ ] Updated `data_quality_notes.md` with what you decided and why
+- [x] Updated `data_quality_notes.md` with what you decided and why
 
 **Deliverable:** a committed notebook, plus cleaned tables in `group2a`.  
 **Done when:** someone else in your group can re-run your notebook start to finish and get the same tables. If it only works on one laptop, it is not done.

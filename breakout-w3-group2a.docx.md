@@ -6,7 +6,7 @@
 | :---- | :---- |
 | **Date** |  |
 | **Who is here** |  |
-| **Who is reporting back** |  |
+| **Who is reporting back** | Regina Robertson |
 
 | The one thing that must happen today Every single person in this group connects to the database from their own Colab notebook. Not one person while the rest watch. If somebody cannot connect by the end of this session, we fix it before you leave. |
 | :---- |
@@ -40,8 +40,8 @@ Work through these in order before asking for help. Nine times in ten it is the 
 
 | 1\. Password typed, not pasted? Pasting from chat often adds an invisible space.  |
 | :---- |
-| **2\. Username is group2a — lowercase, no spaces?**  |
-| **3\. Did section 1 finish before you ran section 2? Wait for the green tick.**  |
+| **2\. Username is group2a — lowercase, no spaces?** Yes |
+| **3\. Did section 1 finish before you ran section 2? Wait for the green tick.** Yes |
 | **4\. Still stuck — what is the exact error text?**  |
 
 **Part B — Check it against week 2**
