@@ -27,9 +27,15 @@ One row per problem from week 2\. What you did, and the reason. Numbers in the m
 | The problem | How many rows | What we did, and why |
 | :---- | :---- | :---- |
 | **Duplicate rows** | 100  | We dropped them using drop_duplicates() on visit_id, keeping the first occurrence. This is because exact repeats would double-count visits and inflate any total or average. |
+<<<<<<< HEAD
 | **Inconsistent categories** |  23,592 (all non-missing rows) | We standardized visit_type using .str.strip().str.title(), which removes extra whitespace and fixes inconsistent capitalization. This is because the same category was being stored in several different ways — for example, "Outpatient", "OUTPATIENT", "outpatient", and " Outpatient " were all treated as separate values, when they represent the same real category. Standardizing them ensures each visit type is counted once, correctly, instead of being split across multiple near-duplicate labels. |
 | **Date formats** | 25,000 (all rows after removing duplicates) | We parsed visit_date from text into a real date type with pd.to_datetime(format='mixed', dayfirst=True), so all four raw formats (YYYY-MM-DD, YYYY/MM/DD, DD/MM/YYYY, DD-Mon-YYYY) now share one type. We kept dayfirst=True because slash dates such as 29/07/2024 can only be day/month. Zero rows failed to parse. We checked each format against a strict parse that allows only one reading, and all rows matched (20,566, 1,505, 1,558 and 1,471 of the raw 25,100), so no day and month were swapped. The range is now 1 January 2024 to 30 December 2025. |
 | **Impossible values** | 50 rows with negative wait_minutes in the cleaned data |   |
+=======
+| **Inconsistent categories** |  23,592 (all non-missing rows) | We standardized visit_type using .str.strip().str.title(), which removes extra whitespace and fixes inconsistent capitalization. This is because the same category was being stored in several different ways — for example, "Outpatient", "OUTPATIENT", "outpatient", and " Outpatient " were all treated as separate values, when they represent the same real category. Standardizing them ensures each visit type is counted once, correctly, instead of being split across multiple near-duplicate labels.   |
+| **Date formats** |  25,100 (all rows) | Parsed visit_date with pd.to_datetime(..., dayfirst=True), unifying all four raw text formats into one real date type; confirmed dayfirst=True is correct using rows like 29/07/2024  |
+| **Impossible values** | 51 |   |
+>>>>>>> 00d330d895bf6e0c519115f729bd9867f370dfb9
 | **Orphan keys** |   |   |
 | **Missing values** |   |   |
 
