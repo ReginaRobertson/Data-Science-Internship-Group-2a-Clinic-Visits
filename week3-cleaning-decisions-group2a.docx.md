@@ -6,7 +6,7 @@
 | :---- | :---- |
 | **Phase lead this week** | Regina Robertson |
 | **Who worked on the notebook** | Regina Robertson |
-| **Date completed** |  |
+| **Date completed** | 28th September, 2026 |
 
 | What you are producing this week Clean tables in your group2a schema, a notebook that rebuilds them from scratch, and this record of every decision you made and why. |
 | :---- |
@@ -37,7 +37,8 @@ One row per problem from week 2\. What you did, and the reason. Numbers in the m
 
 A date written 03/04/2025 could be 3 April or 4 March. Nothing in the data proves which. Your notebook uses dayfirst=True, which reads it as 3 April.
 
-| **Did you keep dayfirst=True, or change it? What made you decide?**  We kept dayfirst=True. Only the slash format (DD/MM/YYYY) is ambiguous. The year-first formats and DD-Mon-YYYY (month spelled out) can only be read one way. For the slash format the data does give evidence: rows such as 29/07/2024, 27/08/2024 and 26/07/2025 have a first number above 12 and no month is numbered above 12, so the first number must be the day. It would be inconsistent for the remaining slash dates to follow a different rule, so we applied day/month/year to every slash date. We also compared the parsed result against a strict %d/%m/%Y parse, and all 1,558 raw slash rows matched.|
+| **Did you keep dayfirst=True, or change it? What made you decide?**  
+We kept dayfirst=True. Only the slash format (DD/MM/YYYY) is ambiguous. The year-first formats and DD-Mon-YYYY (month spelled out) can only be read one way. For the slash format the data does give evidence: rows such as 29/07/2024, 27/08/2024 and 26/07/2025 have a first number above 12 and no month is numbered above 12, so the first number must be the day. It would be inconsistent for the remaining slash dates to follow a different rule, so we applied day/month/year to every slash date. We also compared the parsed result against a strict %d/%m/%Y parse, and all 1,558 raw slash rows matched.|
 | :---- |
 | **How many rows would be affected if you had it backwards?**  535 of the 25,000 cleaned rows would get a different date. These are slash dates where both numbers are 12 or less and differ, for example 09/11/2024, which we read as 9 November 2024 but a month-first reading would turn into 11 September 2024. Every other row is unaffected. The overall range would not change, because it is 1 January 2024 to 30 December 2025 either way. That means the range check alone cannot prove the reading is right, so our decision rests on the rows with a first number above 12. The effect would be limited to monthly trends, where up to 535 visits could land in the wrong month, so we treated it as a decision to record and defend, not a setting to leave at its default.|
 
@@ -53,17 +54,20 @@ From section 10 of your notebook. Every number that changed needs an explanation
 
 **Categories in visit\_type**
 
-| Before / after:  12 distinct values as stored (13 groups if the blank rows are counted)/ 4 values: Outpatient, Follow-Up, Emergency and Unknown. Standardizing case and whitespace merged the 12 variants into the 3 real categories, and the fourth is the 'Unknown' label given to the 1,500 blank rows that remained after the duplicates were removed.|
+| **Before / after:**  
+12 distinct values as stored (13 groups if the blank rows are counted)/ 4 values: Outpatient, Follow-Up, Emergency and Unknown. Standardizing case and whitespace merged the 12 variants into the 3 real categories, and the fourth is the 'Unknown' label given to the 1,500 blank rows that remained after the duplicates were removed.|
 | :---- |
 
 **Missing values**
 
-| Before / after, and what accounts for the change:  1,508 missing values, all in visit_type. Every other column was complete, including wait_minutes./ 50 missing values, all in wait_minutes. visit_type and every other column have 0, duplicates were removed,blanks were filled with 'Unknown'for visit_type and negative wait_minutes values were set to null. |
+| **Before / after, and what accounts for the change:** 
+1,508 missing values, all in visit_type. Every other column was complete, including wait_minutes./ 50 missing values, all in wait_minutes. visit_type and every other column have 0, duplicates were removed,blanks were filled with 'Unknown'for visit_type and negative wait_minutes values were set to null. |
 | :---- |
 
 **Date range**
 
-| What the range is now, and how it compares with the nonsense you got in week 2: The date range is now 1 January 2024 to 30 December 2025, two full calendar years, with nothing before 2024 and nothing in the future. In week 2 the text version gave 01/01/2024 to 31-Oct-2025. That result was wrong because visit_date was stored as text and text sorts character by character rather than by date. So "31-Oct-2025" came out as the latest value, even though the real latest visit is two months later, on 30 December 2025. Now that visit_date is a real date type, sorting is chronological and the problem is gone. We also checked each of the four raw formats against a strict parse, and every row matched, so the range is not distorted by any day and month being swapped. |
+| **What the range is now, and how it compares with the nonsense you got in week 2:** 
+The date range is now 1 January 2024 to 30 December 2025, two full calendar years, with nothing before 2024 and nothing in the future. In week 2 the text version gave 01/01/2024 to 31-Oct-2025. That result was wrong because visit_date was stored as text and text sorts character by character rather than by date. So "31-Oct-2025" came out as the latest value, even though the real latest visit is two months later, on 30 December 2025. Now that visit_date is a real date type, sorting is chronological and the problem is gone. We also checked each of the four raw formats against a strict parse, and every row matched, so the range is not distorted by any day and month being swapped. |
 | :---- |
 
 **4\. Tables you wrote back**
@@ -101,11 +105,10 @@ Next week you build a star schema on these tables. Think ahead.
 | **Anything you deliberately left alone, and why:** We left the 50 NULL wait_minutes values as they are, because we cannot know the true waits and filling them in would invent data. We kept the 1,500 Unknown visit_type rows and the 62 visits pointing at the Unknown patient record, so those real visits stay in the totals instead of being dropped. We did not investigate the high end of wait_minutes (the maximum is 209 minutes) or analyze consultation_fee, because our question does not depend on either. |
 
 **7\. Questions for the weekly call**
-
-| 1. Should the Unknown visit_type rows appear in the department wait-time charts or be filtered out? Including them keeps 1,500 valid wait times, but they cannot be split by visit type.
+1. Should the Unknown visit_type rows appear in the department wait-time charts or be filtered out? Including them keeps 1,500 valid wait times, but they cannot be split by visit type.
 2. Is a wait of around 209 minutes plausible for this clinic or should we treat the top end as suspect too?
-3. Our question only uses visits and departments, so do we need patients and doctors in the week 4 model at all?  |
-| :---- |
+3. Our question only uses visits and departments, so do we need patients and doctors in the week 4 model at all? 
+
 
 | Before you submit this Notebook committed to notebooks/ and runs from a fresh runtime. Clean tables visible in your schema. Every decision above has a reason attached. No password anywhere in the notebook. Cleaning approaches can be discussed openly with group2b. Your decisions and your reasoning stay yours. |
 | :---- |
