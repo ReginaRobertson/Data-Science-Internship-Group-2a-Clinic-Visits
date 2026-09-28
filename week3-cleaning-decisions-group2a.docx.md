@@ -37,9 +37,9 @@ One row per problem from week 2\. What you did, and the reason. Numbers in the m
 
 A date written 03/04/2025 could be 3 April or 4 March. Nothing in the data proves which. Your notebook uses dayfirst=True, which reads it as 3 April.
 
-| Did you keep dayfirst=True, or change it? What made you decide?  |
+| **Did you keep dayfirst=True, or change it? What made you decide?**  We kept dayfirst=True. Only the slash format (DD/MM/YYYY) is ambiguous. The year-first formats and DD-Mon-YYYY (month spelled out) can only be read one way. For the slash format the data does give evidence: rows such as 29/07/2024, 27/08/2024 and 26/07/2025 have a first number above 12 and no month is numbered above 12, so the first number must be the day. It would be inconsistent for the remaining slash dates to follow a different rule, so we applied day/month/year to every slash date. We also compared the parsed result against a strict %d/%m/%Y parse, and all 1,558 raw slash rows matched.|
 | :---- |
-| **How many rows would be affected if you had it backwards?**  |
+| **How many rows would be affected if you had it backwards?**  535 of the 25,000 cleaned rows would get a different date. These are slash dates where both numbers are 12 or less and differ, for example 09/11/2024, which we read as 9 November 2024 but a month-first reading would turn into 11 September 2024. Every other row is unaffected. The overall range would not change, because it is 1 January 2024 to 30 December 2025 either way. That means the range check alone cannot prove the reading is right, so our decision rests on the rows with a first number above 12. The effect would be limited to monthly trends, where up to 535 visits could land in the wrong month, so we treated it as a decision to record and defend, not a setting to leave at its default.|
 
 **3\. Before and after**
 
