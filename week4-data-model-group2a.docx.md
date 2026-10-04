@@ -54,8 +54,8 @@ One row per relationship. Every one should read: one row in the dimension, many 
 | DateTable | visits_clean | Date (visit_date) | One to many | Single |
 | departments_clean | doctors_clean  | department_id | One to many | Single |
 
-**Did Power BI offer many-to-many on any of them? If so, which, and what did you do about it?** Not directly as a cardinality option, but we triggered an equivalent warning. When we tried activating a direct relationship between visits_clean and doctors_clean on doctor_id, Power BI blocked it with an "ambiguous paths" error — two active routes would have existed between the same two tables (the direct one and an indirect one through departments_clean). We left that relationship inactive rather than force it.
-| :---- |
+**Did Power BI offer many-to-many on any of them? If so, which, and what did you do about it?**  Not directly as a cardinality option, but we triggered an equivalent warning. When we tried activating a direct relationship between visits_clean and doctors_clean on doctor_id, Power BI blocked it with an "ambiguous paths" error — two active routes would have existed between the same two tables (the direct one and an indirect one through departments_clean). We left that relationship inactive rather than force it.
+
 | **Any inactive (dashed) relationships? Why do they exist?** Yes, one; visits_clean to doctors_clean on doctor_id. It exists because we loaded doctors_clean into the model, but an active path to it already flows indirectly through departments_clean (visits_clean links to departments_clean,departments_clean links to doctors_clean). Power BI won't allow two active paths between the same two tables, so this direct one stays inactive. Our question doesn't need doctor-level analysis, so we didn't force it active. |
 
 **5\. Making it readable**
