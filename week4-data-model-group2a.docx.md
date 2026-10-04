@@ -6,11 +6,7 @@
 | :---- | :---- |
 | **Phase lead this week** | Regina Robertson |
 | **Who built the model** | Regina Robertson |
-<<<<<<< HEAD
-| **Date completed** |4th October, 2026 |
-=======
 | **Date completed** | 4th October, 2026 |
->>>>>>> a75970d4bd4a4da08483d879232cb439e3c635b4
 
 | No visuals this week A .pbix with a working model and nothing on the canvas. A chart built on a broken model looks fine and is wrong — you would not find out until week 6\. |
 | :---- |
@@ -21,15 +17,9 @@ The single most important sentence in your model. Everything else follows from i
 
 Complete it: one row of our fact table is one patient visit.
 
-<<<<<<< HEAD
-| One row of visits\_clean is one: patient visit. |
-| :---- |
-| **How many rows does it have after cleaning, and does that match your week 3 notes?**  25,000 rows. Yes, this matches our week 3 notes exactly. We started with 25,100 rows, dropped 100 exact duplicates, and the remaining 25,000 is what was written to visits_clean and confirmed again today when the Power BI total (2,652,563) matched the SQL total against this same table.|
-=======
 | One row of visits\_clean is one:  patient visit |
 | :---- |
 | **How many rows does it have after cleaning, and does that match your week 3 notes?**  25,000 rows. Yes, this matches our week 3 notes exactly. We started with 25,100 rows, dropped 100 exact duplicates, and the remaining 25,000 is what was written to visits_clean and confirmed again today when the Power BI total (2,652,563) matched the SQL total against this same table. |
->>>>>>> a75970d4bd4a4da08483d879232cb439e3c635b4
 
 **2\. Tables you loaded**
 
@@ -37,15 +27,8 @@ Only the \_clean tables from your own schema. If anything from raw\_clinic is in
 
 | Fact table (name and row count): visits_clean, 25,000 rows. |
 | :---- |
-<<<<<<< HEAD
-| **Dimension tables (name and row count each):** departments_clean (8 rows), patients_clean (901 rows, including the Unknown record), doctors_clean (40 rows), plus DateTable (731 rows, built in Power BI rather than loaded from the database). |
-| **Anything you loaded and then removed, and why:** Nothing from raw_clinic was loaded. We loaded only the four_clean tables from our own schema, so the raw text dates, duplicates and messy categories never entered the model. We also saw two other tables in our schema when connecting (test and zz_Regbert_visits) but did not load either; they appear to be scratch tables from earlier experimentation, not part of our cleaned data.|
-=======
-
 | **Dimension tables (name and row count each):**  departments_clean (8 rows), patients_clean (901 rows, including the Unknown record), doctors_clean (40 rows), plus DateTable (731 rows, built in Power BI rather than loaded from the database). |
 | **Anything you loaded and then removed, and why:**  Nothing from raw_clinic was loaded. We loaded only the four_clean tables from our own schema, so the raw text dates, duplicates and messy categories never entered the model. We also saw two other tables in our schema when connecting (test and zz_Regbert_visits) but did not load either; they appear to be scratch tables from earlier experimentation, not part of our cleaned data. |
-
->>>>>>> a75970d4bd4a4da08483d879232cb439e3c635b4
 
 **3\. Your date table**
 
@@ -71,7 +54,7 @@ One row per relationship. Every one should read: one row in the dimension, many 
 | DateTable | visits_clean | Date (visit_date) | One to many | Single |
 | departments_clean | doctors_clean  | department_id | One to many | Single |
 
-| Did Power BI offer many-to-many on any of them? If so, which, and what did you do about it? Not directly as a cardinality option, but we triggered an equivalent warning. When we tried activating a direct relationship between visits_clean and doctors_clean on doctor_id, Power BI blocked it with an "ambiguous paths" error — two active routes would have existed between the same two tables (the direct one and an indirect one through departments_clean). We left that relationship inactive rather than force it. |
+**Did Power BI offer many-to-many on any of them? If so, which, and what did you do about it?** Not directly as a cardinality option, but we triggered an equivalent warning. When we tried activating a direct relationship between visits_clean and doctors_clean on doctor_id, Power BI blocked it with an "ambiguous paths" error — two active routes would have existed between the same two tables (the direct one and an indirect one through departments_clean). We left that relationship inactive rather than force it.
 | :---- |
 | **Any inactive (dashed) relationships? Why do they exist?** Yes, one; visits_clean to doctors_clean on doctor_id. It exists because we loaded doctors_clean into the model, but an active path to it already flows indirectly through departments_clean (visits_clean links to departments_clean,departments_clean links to doctors_clean). Power BI won't allow two active paths between the same two tables, so this direct one stays inactive. Our question doesn't need doctor-level analysis, so we didn't force it active. |
 
