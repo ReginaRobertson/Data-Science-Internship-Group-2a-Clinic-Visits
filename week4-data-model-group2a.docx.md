@@ -72,14 +72,14 @@ Your stakeholder is not an analyst. They should never see a column called wait\_
 
 You have no visuals, so you cannot eyeball it. Check the numbers directly instead: drop a field into a table visual temporarily, read the total, then delete the visual.
 
-| Total wait\_minutes from Power BI:  |
+| Total wait\_minutes from Power BI:  2,652,563 |
 | :---- |
-| **The same total from a SQL query against your clean table:**  |
-| **Do they match? If not, what is different and why?**  |
+| **The same total from a SQL query against your clean table:**  2,652,563, from SELECT sum(wait_minutes) AS total_wait FROM group2a.visits_clean;|
+| **Do they match? If not, what is different and why?**  Yes, they match exactly. |
 
 Now the same by a dimension attribute — this proves the relationship actually works.
 
-| Total by department\_name — does the breakdown add up to the grand total?  |
+**Total by department\_name — does the breakdown add up to the grand total?**  Yes. Both Power BI and SQL gave the same eight department totals, row for row: Dental 330,497, Emergency 335,095, General Medicine 332,316, Laboratory 333,574, Maternity 336,592, Ophthalmology 327,973, Paediatrics 325,788 and Physiotherapy 330,728. These sum to 2,652,563, matching the grand total exactly, which confirms the departments_clean link to visits_clean relationship filters correctly.  
 | :---- |
 
 **7\. What your Model view looks like**
@@ -94,13 +94,17 @@ Take a screenshot of Model view and paste it below, or describe the shape.
 
 Next week is measures and your first dashboard. It goes fast if the model is right.
 
-| Which measures do you already know you will need?  |
+**Which measures do you already know you will need?**   Average wait time, median wait time, visits per department, share of emergency visits and total/average wait time by visit type. These map directly to our sub-questions from scope.md; department ranking needs average and median wait; the visit-type breakdown needs wait time split by Visit Type; and the "over time" part needs these measures sliced by DateTable's Month and Year.
 | :---- |
-| **Anything still not working that you need help with:**  |
+| **Anything still not working that you need help with:**   Nothing broken right now; the model checks out (section 6 confirmed totals match SQL exactly). One open decision to carry into week 5: whether "Unknown" Visit Type rows (1,500 of them) and the "Unknown" patient record should be included or excluded from the department wait-time measures, since that will change what the numbers show.|
 
 **9\. Questions for the weekly call**
 
-|   |
+| 1. Should DAX measures exclude "Unknown" Visit Type and "Unknown" patient rows, or include them as their own category?
+
+2. Is doctors_clean worth keeping in the model at all for week 5, given it's not directly connected to visits_clean and our question doesn't use doctor-level data?
+
+3. Should Consultation Fee be included in any week 5 measure, or is it confirmed out of scope per our scope.md? 
 | :---- |
 
 | Before you submit this .pbix committed to dashboard/. Date table marked. Every relationship one-to-many, single direction, solid. Columns renamed, IDs hidden. No visuals. Modelling approaches can be discussed openly with group2b. Your model and your measures stay yours. |
