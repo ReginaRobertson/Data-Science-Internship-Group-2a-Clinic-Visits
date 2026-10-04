@@ -96,7 +96,7 @@ Next week is measures and your first dashboard. It goes fast if the model is rig
 
 **Which measures do you already know you will need?**   Average wait time, median wait time, visits per department, share of emergency visits and total/average wait time by visit type. These map directly to our sub-questions from scope.md; department ranking needs average and median wait; the visit-type breakdown needs wait time split by Visit Type; and the "over time" part needs these measures sliced by DateTable's Month and Year.
 | :---- |
-| **Anything still not working that you need help with:**   Nothing broken right now; the model checks out (section 6 confirmed totals match SQL exactly). One open decision to carry into week 5: whether "Unknown" Visit Type rows (1,500 of them) and the "Unknown" patient record should be included or excluded from the department wait-time measures, since that will change what the numbers show.|
+**Anything still not working that you need help with:**   Nothing broken right now; the model checks out (section 6 confirmed totals match SQL exactly). One open decision to carry into week 5: whether "Unknown" Visit Type rows (1,500 of them) and the "Unknown" patient record should be included or excluded from the department wait-time measures, since that will change what the numbers show.
 
 **9\. Questions for the weekly call**
 
