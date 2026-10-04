@@ -50,7 +50,7 @@ One row per relationship. Every one should read: one row in the dimension, many 
 | From (dimension) | To (fact) | On column | Cardinality | Direction |
 | :---- | :---- | :---- | :---- | :---- |
 | departments_clean | visits_clean | department_id | One to many | Single |
-| patients_clean | visits_clean |  | One to many | Single |
+| patients_clean | visits_clean | patient_id | One to many | Single |
 | DateTable | visits_clean | Date (visit_date) | One to many | Single |
 | departments_clean | doctors_clean  | department_id | One to many | Single |
 
@@ -62,11 +62,11 @@ One row per relationship. Every one should read: one row in the dimension, many 
 
 Your stakeholder is not an analyst. They should never see a column called wait\_minutes.
 
-| Columns you renamed — original name and new name (the important ones):  |
+**Columns you renamed — original name and new name (the important ones):** wait_minutes to Wait Time (Minutes), visit_type to Visit Type, department_name to Department Name, consultation_fee to Consultation Fee, visit_date to Visit Date, patient_name to Patient Name, doctor_name to Doctor Name and birth_year to Birth Year, sex to Sex, region to Region. 
 | :---- |
-| **Columns you hid, and why:**  |
-| **Data types you corrected:**  |
-| **Month sorting fixed with MonthNumber — yes or no:**  |
+| **Columns you hid, and why:**  We hid every raw ID column. Thus, visit_id, patient_id, doctor_id, department_id in visits_clean, plus the matching department_id, patient_id, doctor_id in the dimension tables. These exist only to make the relationships work; a stakeholder has no use for them and could accidentally drag one onto a chart, producing a meaningless count instead of a real breakdown. |
+| **Data types you corrected:** Visit Date was set to Date, Wait Time (Minutes) set to Whole Number, Consultation Fee set to Fixed Decimal Number with Currency format. |
+| **Month sorting fixed with MonthNumber — yes or no:** Yes. Month in DateTable is sorted by MonthNumber, so months display in calendar order (January to December) rather than alphabetically. |
 
 **6\. Proving the model works**
 
