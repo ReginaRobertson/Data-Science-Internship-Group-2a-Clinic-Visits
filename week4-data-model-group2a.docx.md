@@ -100,12 +100,11 @@ Next week is measures and your first dashboard. It goes fast if the model is rig
 
 **9\. Questions for the weekly call**
 
-| 1. Should DAX measures exclude "Unknown" Visit Type and "Unknown" patient rows, or include them as their own category?
+1. Should DAX measures exclude "Unknown" Visit Type and "Unknown" patient rows, or include them as their own category?
 
 2. Is doctors_clean worth keeping in the model at all for week 5, given it's not directly connected to visits_clean and our question doesn't use doctor-level data?
 
 3. Should Consultation Fee be included in any week 5 measure, or is it confirmed out of scope per our scope.md? 
-| :---- |
 
 | Before you submit this .pbix committed to dashboard/. Date table marked. Every relationship one-to-many, single direction, solid. Columns renamed, IDs hidden. No visuals. Modelling approaches can be discussed openly with group2b. Your model and your measures stay yours. |
 | :---- |
