@@ -86,9 +86,9 @@ Now the same by a dimension attribute — this proves the relationship actually 
 
 Take a screenshot of Model view and paste it below, or describe the shape.
 
-|   |
+| <img width="1920" height="992" alt="Screenshot (118)" src="https://github.com/user-attachments/assets/eec1b8f4-acce-49f1-b7a4-78ec8c9b4350" />|
 | :---- |
-| **Is it a star — fact in the middle, every dimension joined only to it? If anything is joined dimension-to-dimension, say which:**  |
+| **Is it a star — fact in the middle, every dimension joined only to it? If anything is joined dimension-to-dimension, say which:**  Not quite a pure star. it's a star with one exception. visits_clean sits at the centre, and three dimensions are joined directly and only to it: patients_clean, departments_clean and DateTable. doctors_clean is the exception; it's joined to departments_clean rather than directly to the fact table, because the direct visits_clean link to doctors_clean relationship is inactive (Power BI blocked it as an ambiguous path, since an active route to doctors_clean already exists through departments_clean). This was a deliberate outcome of resolving that conflict, not an oversight and since our question doesn't need doctor-level analysis, we left the model as it is rather than restructuring it around a table we won't use. |
 
 **8\. Ready for week 5?**
 
