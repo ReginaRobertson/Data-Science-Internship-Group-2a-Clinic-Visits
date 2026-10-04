@@ -32,16 +32,16 @@ Only the \_clean tables from your own schema. If anything from raw\_clinic is in
 
 **3\. Your date table**
 
-| Date range it covers (start and end):  |
+| Date range it covers (start and end): 1 January 2024 to 31 December 2025. |
 | :---- |
-| **Does that fully cover the minimum and maximum date in your fact table? How did you check?**  |
-| **Columns you added beyond Date:**  |
+| **Does that fully cover the minimum and maximum date in your fact table? How did you check?** Yes. Our week 3 notebook confirmed visit_date in visits_clean ranges from 1 January 2024 to 30 December 2025, after parsing. DateTable covers the full two calendar years (through 31 December 2025), so every visit date falls inside it with no gaps at either end. |
+| **Columns you added beyond Date:** Year, Month, MonthNumber, Quarter, DayOfWeek. |
 
 Marked as a date table? This is the step everyone skips, and skipping it gives wrong answers with no error.
 
-| Marked as date table — yes or no, and who did it:  |
+| Marked as date table — yes or no, and who did it: Yes, Regina Robertson did it |
 | :---- |
-| **Auto date/time switched off — yes or no:**  |
+| **Auto date/time switched off — yes or no:**  Yes |
 
 **4\. Your relationships**
 
