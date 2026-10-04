@@ -4,9 +4,9 @@
 
 | Group | group2a |
 | :---- | :---- |
-| **Phase lead this week** |  |
-| **Who built the model** |  |
-| **Date completed** |  |
+| **Phase lead this week** | Regina Robertson |
+| **Who built the model** | Regina Robertson |
+| **Date completed** | 4th October, 2026 |
 
 | No visuals this week A .pbix with a working model and nothing on the canvas. A chart built on a broken model looks fine and is wrong — you would not find out until week 6\. |
 | :---- |
@@ -15,20 +15,20 @@
 
 The single most important sentence in your model. Everything else follows from it.
 
-Complete it: one row of our fact table is one …
+Complete it: one row of our fact table is one patient visit.
 
-| One row of visits\_clean is one:  |
+| One row of visits\_clean is one:  patient visit |
 | :---- |
-| **How many rows does it have after cleaning, and does that match your week 3 notes?**  |
+| **How many rows does it have after cleaning, and does that match your week 3 notes?**  25,000 rows. Yes, this matches our week 3 notes exactly. We started with 25,100 rows, dropped 100 exact duplicates, and the remaining 25,000 is what was written to visits_clean and confirmed again today when the Power BI total (2,652,563) matched the SQL total against this same table. |
 
 **2\. Tables you loaded**
 
 Only the \_clean tables from your own schema. If anything from raw\_clinic is in here, say so and explain why.
 
-| Fact table (name and row count):  |
+| Fact table (name and row count): visits_clean, 25,000 rows. |
 | :---- |
-| **Dimension tables (name and row count each):**  |
-| **Anything you loaded and then removed, and why:**  |
+| **Dimension tables (name and row count each):**  departments_clean (8 rows), patients_clean (901 rows, including the Unknown record), doctors_clean (40 rows), plus DateTable (731 rows, built in Power BI rather than loaded from the database). |
+| **Anything you loaded and then removed, and why:**  Nothing from raw_clinic was loaded. We loaded only the four_clean tables from our own schema, so the raw text dates, duplicates and messy categories never entered the model. We also saw two other tables in our schema when connecting (test and zz_Regbert_visits) but did not load either; they appear to be scratch tables from earlier experimentation, not part of our cleaned data. |
 
 **3\. Your date table**
 
