@@ -53,7 +53,7 @@ A different person leads each phase, so nobody specialises by accident and every
 | Scope | 1 | Margaret Isliker, Regina Robertson|
 | SQL profiling | 2 | Regina Robertson, Margaret Isliker|
 | Python cleaning | 3 |Regina Robertson |
-| Data modelling | 4 | |
+| Data modelling | 4 | Regina Robertson |
 | Dashboard build | 5–6 | |
 | Presentation | 7–8 | |
 
@@ -154,18 +154,18 @@ Work through `week2_profiling_clinic.sql` from top to bottom. Do not skip to the
 
 **Goal:** a star schema in Power BI. This is the part employers probe in interviews, and the part most beginners skip.
 
-- [ ] Connected Power BI Desktop to `group2a` (PostgreSQL connector)
-- [ ] Loaded your cleaned fact table and your dimension tables
-- [ ] Built a **date table** — one row per day covering your full range
-- [ ] Marked it as a date table in Power BI
-- [ ] Added year, quarter, month name, month number and day-of-week columns to it
-- [ ] Created relationships from the fact table to each dimension
-- [ ] Checked every relationship is one-to-many, single direction, from dimension to fact
+- [x] Connected Power BI Desktop to `group2a` (PostgreSQL connector)
+- [x] Loaded your cleaned fact table and your dimension tables
+- [x] Built a **date table** — one row per day covering your full range
+- [x] Marked it as a date table in Power BI
+- [x] Added year, quarter, month name, month number and day-of-week columns to it
+- [x] Created relationships from the fact table to each dimension
+- [x] Checked every relationship is one-to-many, single direction, from dimension to fact
 - [ ] Confirmed no relationship is many-to-many
-- [ ] Looked at the Model view — it should look like a star, not a chain or a web
-- [ ] Renamed columns to something a non-analyst would understand
-- [ ] Hidden the raw key columns from the report view
-- [ ] Committed the `.pbix` to `dashboard/`
+- [x] Looked at the Model view — it should look like a star, not a chain or a web
+- [x] Renamed columns to something a non-analyst would understand
+- [x] Hidden the raw key columns from the report view
+- [x] Committed the `.pbix` to `dashboard/`
 
 **Deliverable:** a `.pbix` with a working model and **no visuals yet**.  
 **Done when:** the Model view shows one fact table in the middle with three dimensions and a date table radiating out from it.
