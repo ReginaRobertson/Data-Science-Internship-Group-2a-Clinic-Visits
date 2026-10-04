@@ -6,7 +6,11 @@
 | :---- | :---- |
 | **Phase lead this week** | Regina Robertson |
 | **Who built the model** | Regina Robertson |
+<<<<<<< HEAD
 | **Date completed** |4th October, 2026 |
+=======
+| **Date completed** | 4th October, 2026 |
+>>>>>>> a75970d4bd4a4da08483d879232cb439e3c635b4
 
 | No visuals this week A .pbix with a working model and nothing on the canvas. A chart built on a broken model looks fine and is wrong — you would not find out until week 6\. |
 | :---- |
@@ -17,9 +21,15 @@ The single most important sentence in your model. Everything else follows from i
 
 Complete it: one row of our fact table is one patient visit.
 
+<<<<<<< HEAD
 | One row of visits\_clean is one: patient visit. |
 | :---- |
 | **How many rows does it have after cleaning, and does that match your week 3 notes?**  25,000 rows. Yes, this matches our week 3 notes exactly. We started with 25,100 rows, dropped 100 exact duplicates, and the remaining 25,000 is what was written to visits_clean and confirmed again today when the Power BI total (2,652,563) matched the SQL total against this same table.|
+=======
+| One row of visits\_clean is one:  patient visit |
+| :---- |
+| **How many rows does it have after cleaning, and does that match your week 3 notes?**  25,000 rows. Yes, this matches our week 3 notes exactly. We started with 25,100 rows, dropped 100 exact duplicates, and the remaining 25,000 is what was written to visits_clean and confirmed again today when the Power BI total (2,652,563) matched the SQL total against this same table. |
+>>>>>>> a75970d4bd4a4da08483d879232cb439e3c635b4
 
 **2\. Tables you loaded**
 
@@ -27,8 +37,15 @@ Only the \_clean tables from your own schema. If anything from raw\_clinic is in
 
 | Fact table (name and row count): visits_clean, 25,000 rows. |
 | :---- |
+<<<<<<< HEAD
 | **Dimension tables (name and row count each):** departments_clean (8 rows), patients_clean (901 rows, including the Unknown record), doctors_clean (40 rows), plus DateTable (731 rows, built in Power BI rather than loaded from the database). |
 | **Anything you loaded and then removed, and why:** Nothing from raw_clinic was loaded. We loaded only the four_clean tables from our own schema, so the raw text dates, duplicates and messy categories never entered the model. We also saw two other tables in our schema when connecting (test and zz_Regbert_visits) but did not load either; they appear to be scratch tables from earlier experimentation, not part of our cleaned data.|
+=======
+
+| **Dimension tables (name and row count each):**  departments_clean (8 rows), patients_clean (901 rows, including the Unknown record), doctors_clean (40 rows), plus DateTable (731 rows, built in Power BI rather than loaded from the database). |
+| **Anything you loaded and then removed, and why:**  Nothing from raw_clinic was loaded. We loaded only the four_clean tables from our own schema, so the raw text dates, duplicates and messy categories never entered the model. We also saw two other tables in our schema when connecting (test and zz_Regbert_visits) but did not load either; they appear to be scratch tables from earlier experimentation, not part of our cleaned data. |
+
+>>>>>>> a75970d4bd4a4da08483d879232cb439e3c635b4
 
 **3\. Your date table**
 
@@ -39,7 +56,7 @@ Only the \_clean tables from your own schema. If anything from raw\_clinic is in
 
 Marked as a date table? This is the step everyone skips, and skipping it gives wrong answers with no error.
 
-| Marked as date table — yes or no, and who did it: Yes, Regina Robertson did it |
+**Marked as date table — yes or no, and who did it:**  Yes, Regina Robertson did it.
 | :---- |
 | **Auto date/time switched off — yes or no:**  Yes |
 
