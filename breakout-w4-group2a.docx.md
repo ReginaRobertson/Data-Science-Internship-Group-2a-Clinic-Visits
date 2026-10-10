@@ -55,8 +55,8 @@ Then split the other three tables. Which are dimensions, and what does one row o
 Your calendar has to cover every date in your fact table. If it is shorter, rows silently fall outside it and vanish from every time-based chart. Check before you build.
 
 | \-- run this in DBeaver, not Power BI SELECT min(visit\_date) AS earliest,        max(visit\_date) AS latest FROM group2a.visits\_clean; |  |  |
-| ----- | :---- | ----: |
-| **Earliest and latest:**  |  | 1 January 2024 and 30 December 2025 |
+
+**Earliest and latest:**  1 January 2024 and 30 December 2025
 
 | **3** | **Create it** | 8 min |
 
