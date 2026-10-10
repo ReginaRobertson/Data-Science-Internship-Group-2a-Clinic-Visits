@@ -4,10 +4,10 @@
 
 | Group | group2a |
 | :---- | :---- |
-| **Date** |  |
-| **Who is here** |  |
-| **Who is sharing their screen** |  |
-| **Who is reporting back** |  |
+| **Date** | 7th October, 2026 |
+| **Who is here** | Regina Robertson, Bright Osei, Richard Antwi Adjei, Margaret Rose Isliker|
+| **Who is sharing their screen** | Regina Robertson |
+| **Who is reporting back** | Regina Robertson |
 
 | How this one works Unlike weeks 1 and 3, not everyone can do this at once — Power BI is Windows only and some of you will be pairing. One person shares their screen and drives. Everybody else watches, argues, and writes the answers down. |
 | :---- |
@@ -16,8 +16,17 @@
 
 The person driving should already have Power BI open with the four \_clean tables loaded from the group2a schema. If nobody has got that far, spend the first ten minutes on it together — that is a perfectly good use of the session.
 
-| Are the tables loaded? Which ones, and how many rows each?  |
-| :---- |
+**Are the tables loaded? Which ones, and how many rows each?**
+
+Yes, all four `_clean` tables from the group2a schema are loaded:
+
+| Table | Rows |
+|---|---|
+| visits_clean | 25,000 |
+| patients_clean | 901 (900 patients plus the Unknown record) |
+| doctors_clean | 40 |
+| departments_clean | 8 |
+
 
 **Part A — Agree your grain**
 
@@ -26,14 +35,18 @@ The person driving should already have Power BI open with the four \_clean table
 
 Everything in the model follows from this. If the group cannot agree on it in four minutes, that is the most useful thing you will discover today.
 
-| One row of visits\_clean is one:  |
-| :---- |
+**One row of visits\_clean is one:**  Patient visit — one visit by one patient to one department, with a date, a doctor, a visit type, a wait time and a fee. 
+
 
 Then split the other three tables. Which are dimensions, and what does one row of each represent?
 
-| Dimensions, and what one row of each is:  |
-| :---- |
+**Dimensions, and what one row of each is:**
 
+- **departments_clean:** one department of the clinic (8 rows).
+- **patients_clean:** one patient (900 real patients, plus one Unknown record that the 62 orphan visits point to).
+- **doctors_clean:** one doctor (40 rows).
+- **Date table (built in Power BI):** one calendar day.
+  
 **Part B — Build the date table together**
 
 | 2 | Find your real date range first | 4 min |
