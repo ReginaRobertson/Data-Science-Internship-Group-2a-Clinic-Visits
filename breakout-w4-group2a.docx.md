@@ -56,21 +56,25 @@ Your calendar has to cover every date in your fact table. If it is shorter, rows
 
 | \-- run this in DBeaver, not Power BI SELECT min(visit\_date) AS earliest,        max(visit\_date) AS latest FROM group2a.visits\_clean; |  |  |
 | ----- | :---- | ----: |
-| **Earliest and latest:**  |  |  |
+| **Earliest and latest:**  |  | 1 January 2024 and 30 December 2025 |
+
 | **3** | **Create it** | 8 min |
 
 Modeling \> New table, then paste this. Adjust the two dates so the calendar starts on or before your earliest and ends on or after your latest.
 
 | dim\_date \= ADDCOLUMNS(     CALENDAR(DATE(2024,1,1), DATE(2025,12,31)),     "Year",        YEAR(\[Date\]),     "Month",       FORMAT(\[Date\], "MMMM"),     "MonthNumber", MONTH(\[Date\]),     "Quarter",     "Q" & QUARTER(\[Date\]),     "DayOfWeek",   FORMAT(\[Date\], "dddd") ) |  |  |
 | ----- | :---- | ----: |
-| **How many rows did it create? Does that match the number of days in your range?**  |  |  |
+| **How many rows did it create? Does that match the number of days in your range?**  | 731 rows. | Yes, that matches: 2024 is a leap year with 366 days, and 2025 has 365 days, so 366 + 365 = 731. The calendar runs from 1 January 2024 to 31 December 2025, which starts on or before our earliest visit and ends on or after our latest (30 December 2025), so no visit falls outside it. |
+
 | **4** | **Mark it — the step everyone skips** | 3 min |
 
 Right-click dim\_date in the Fields pane \> Mark as date table \> choose the Date column.
 
 Skipping this produces no error. Your time intelligence just quietly returns wrong numbers, and you find out in week 6\.
 
-| Done? Who did it?  |
+**Done? Who did it?**
+
+Yes. `DateTable` was marked as a date table using the `Date` column. Done by Regina Robertson.
 | :---- |
 
 While you are there: File \> Options and settings \> Options \> Data Load, and untick Auto date/time for new files.
