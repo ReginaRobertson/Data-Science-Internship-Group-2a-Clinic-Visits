@@ -138,6 +138,7 @@ No clicking for these. Ten minutes. You are planning the three relationships you
 
 
 **Which column joins each dimension to visits_clean?**
+
 Dimension \> column \> fact column, one line each:
 
 departments_clean > department_id > visits_clean.department_id
@@ -164,6 +165,7 @@ It means the key on the dimension side is not unique, so there is a duplicate we
 | `visit_date` | Visit Date |
 | `patient_name` | Patient Name |
 | `doctor_name` | Doctor Name |
+
 We will also hide the raw ID columns (`visit_id`, `patient_id`, `doctor_id`, `department_id`), since they only exist to make the relationships work.
 
 **Report back to the class**
