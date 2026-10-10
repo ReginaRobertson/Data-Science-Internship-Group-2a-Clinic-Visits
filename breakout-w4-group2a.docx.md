@@ -55,7 +55,9 @@ Then split the other three tables. Which are dimensions, and what does one row o
 Your calendar has to cover every date in your fact table. If it is shorter, rows silently fall outside it and vanish from every time-based chart. Check before you build.
 
 -- run this in DBeaver, not Power BI 
-SELECT min(visit\_date) AS earliest,       
+
+SELECT min(visit\_date) AS earliest, 
+
 max(visit\_date) AS latest FROM group2a.visits\_clean;
 
 **Earliest and latest:**  1 January 2024 and 30 December 2025
@@ -63,14 +65,23 @@ max(visit\_date) AS latest FROM group2a.visits\_clean;
 | **3** | **Create it** | 8 min |
 
 Modeling \> New table, then paste this. Adjust the two dates so the calendar starts on or before your earliest and ends on or after your latest.
+
 dim_date =
+
 ADDCOLUMNS(
+
     CALENDAR(DATE(2024,1,1), DATE(2025,12,31)),
+    
     "Year",        YEAR([Date]),
+    
     "Month",       FORMAT([Date], "MMMM"),
+    
     "MonthNumber", MONTH([Date]),
+    
     "Quarter",     "Q" & QUARTER([Date]),
+    
     "DayOfWeek",   FORMAT([Date], "dddd")
+    
 )
   
 
@@ -130,8 +141,11 @@ No clicking for these. Ten minutes. You are planning the three relationships you
 Dimension \> column \> fact column, one line each:
 
 departments_clean > department_id > visits_clean.department_id
+
 patients_clean > patient_id > visits_clean.patient_id
+
 doctors_clean > doctor_id > visits_clean.doctor_id (inactive: an active path already runs through departments_clean)
+
 DateTable > Date > visits_clean.visit_date
 
 
