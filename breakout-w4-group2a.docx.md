@@ -63,8 +63,8 @@ Your calendar has to cover every date in your fact table. If it is shorter, rows
 Modeling \> New table, then paste this. Adjust the two dates so the calendar starts on or before your earliest and ends on or after your latest.
 
 | dim\_date \= ADDCOLUMNS(     CALENDAR(DATE(2024,1,1), DATE(2025,12,31)),     "Year",        YEAR(\[Date\]),     "Month",       FORMAT(\[Date\], "MMMM"),     "MonthNumber", MONTH(\[Date\]),     "Quarter",     "Q" & QUARTER(\[Date\]),     "DayOfWeek",   FORMAT(\[Date\], "dddd") ) |  |  |
-| ----- | :---- | ----: |
-| **How many rows did it create? Does that match the number of days in your range?**  | 731 rows. | Yes, that matches: 2024 is a leap year with 366 days, and 2025 has 365 days, so 366 + 365 = 731. The calendar runs from 1 January 2024 to 31 December 2025, which starts on or before our earliest visit and ends on or after our latest (30 December 2025), so no visit falls outside it. |
+
+**How many rows did it create? Does that match the number of days in your range?**  731 rows.  Yes, that matches: 2024 is a leap year with 366 days, and 2025 has 365 days, so 366 + 365 = 731. The calendar runs from 1 January 2024 to 31 December 2025, which starts on or before our earliest visit and ends on or after our latest (30 December 2025), so no visit falls outside it. 
 
 | **4** | **Mark it — the step everyone skips** | 3 min |
 
