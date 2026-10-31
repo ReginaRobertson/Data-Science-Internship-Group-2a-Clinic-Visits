@@ -54,8 +54,8 @@ A different person leads each phase, so nobody specialises by accident and every
 | SQL profiling | 2 | Regina Robertson, Margaret Isliker|
 | Python cleaning | 3 |Regina Robertson |
 | Data modelling | 4 | Regina Robertson |
-| Dashboard build | 5–6 | |
-| Presentation | 7–8 | |
+| Dashboard build | 5–6 | Regina Robertson |
+| Presentation | 7–8 | Regina Robertson |
 
 The lead is not the only person doing the work. They are the person who makes sure it happens and who speaks for the group on that week's call.
 
@@ -161,7 +161,7 @@ Work through `week2_profiling_clinic.sql` from top to bottom. Do not skip to the
 - [x] Added year, quarter, month name, month number and day-of-week columns to it
 - [x] Created relationships from the fact table to each dimension
 - [x] Checked every relationship is one-to-many, single direction, from dimension to fact
-- [ ] Confirmed no relationship is many-to-many
+- [x] Confirmed no relationship is many-to-many
 - [x] Looked at the Model view — it should look like a star, not a chain or a web
 - [x] Renamed columns to something a non-analyst would understand
 - [x] Hidden the raw key columns from the report view
@@ -184,22 +184,22 @@ Because it stops working the moment you want to slice by something that is not i
 
 ### Measures
 
-- [ ] Average wait time
-- [ ] Median wait time
-- [ ] Visits per department
-- [ ] Share of emergency visits
-- [ ] Consultation fee revenue
-- [ ] Every measure has a clear name a non-analyst would understand
-- [ ] Tested each measure by slicing it by a dimension — the numbers still make sense
+- [x] Average wait time
+- [x] Median wait time
+- [x] Visits per department
+- [x] Share of emergency visits
+- [x] Consultation fee revenue
+- [x] Every measure has a clear name a non-analyst would understand
+- [x] Tested each measure by slicing it by a dimension — the numbers still make sense
 
 ### First dashboard
 
-- [ ] One page, laid out roughly
-- [ ] A time trend using your date table
-- [ ] A breakdown by department_name
-- [ ] At least one slicer or filter
-- [ ] Checked the totals against a SQL query — they must match
-- [ ] Committed the `.pbix`
+- [x] One page, laid out roughly
+- [x] A time trend using your date table
+- [x] A breakdown by department_name
+- [x] At least one slicer or filter
+- [x] Checked the totals against a SQL query — they must match
+- [x] Committed the `.pbix`
 
 **Deliverable:** an ugly but functional dashboard.  
 **Done when:** the numbers on screen match what SQL says. If they do not, the model is wrong — fix it now, not in week 7.
