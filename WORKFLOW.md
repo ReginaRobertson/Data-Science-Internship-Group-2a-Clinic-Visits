@@ -38,7 +38,7 @@ Each week has a **Deliverable** and a **Done when** line. If you cannot honestly
 - [x] Created the group repository on GitHub and added every member
 - [ ] Everyone has cloned it and made at least one commit
 - [x] Agreed a communication channel and a weekly working time
-- [ ] Agreed who leads each phase (see the rota below)
+- [x] Agreed who leads each phase (see the rota below)
 - [x] Read the project brief together — all of it, aloud if necessary
 
 **Deliverable:** a repository with every member's name in the commit history.  
@@ -210,15 +210,15 @@ Because it stops working the moment you want to slice by something that is not i
 
 **Goal:** fix what the draft exposed. Usually a missing dimension, or a measure that does not slice correctly.
 
-- [ ] Collected feedback from the week 5 call and written it down
-- [ ] Shown the draft to someone outside your group and watched them try to read it
-- [ ] Fixed whatever the draft revealed about the model
-- [ ] Added the pages you actually need (suggested: Wait time overview, Department comparison, Visit type and trend)
-- [ ] Made sure every page answers part of your question — deleted anything that does not
-- [ ] Added tooltips explaining anything non-obvious
-- [ ] Checked it reads left-to-right, top-to-bottom, most important first
-- [ ] Tested every slicer and cross-filter interaction
-- [ ] Committed
+- [x] Collected feedback from the week 5 call and written it down
+- [x] Shown the draft to someone outside your group and watched them try to read it
+- [x] Fixed whatever the draft revealed about the model
+- [x] Added the pages you actually need (suggested: Wait time overview, Department comparison, Visit type and trend)
+- [x] Made sure every page answers part of your question — deleted anything that does not
+- [x] Added tooltips explaining anything non-obvious
+- [x] Checked it reads left-to-right, top-to-bottom, most important first
+- [x] Tested every slicer and cross-filter interaction
+- [x] Committed
 
 **Deliverable:** a near-final dashboard.  
 **Done when:** someone who has never seen it can tell you what it says without you narrating.
@@ -235,23 +235,23 @@ Because it stops working the moment you want to slice by something that is not i
 
 ### Polish
 
-- [ ] Consistent colours, fonts and number formatting across every page
-- [ ] Every axis and legend labelled
-- [ ] No default titles left saying things like "Sum of fare by zone_name"
-- [ ] Dashboard loads and responds without lag
+- [x] Consistent colours, fonts and number formatting across every page
+- [x] Every axis and legend labelled
+- [x] No default titles left saying things like "Sum of fare by zone_name"
+- [x] Dashboard loads and responds without lag
 
 ### Documentation
 
-- [ ] `README.md` — what the project is, what question it answers, how to run it, what you found
-- [ ] Repository tidy: `sql/`, `notebooks/`, `dashboard/`, `presentation/`
-- [ ] No passwords or connection strings anywhere in the repository
-- [ ] `data_quality_notes.md` complete and final
-- [ ] A "what we would do next" list
+- [x] `README.md` — what the project is, what question it answers, how to run it, what you found
+- [x] Repository tidy: `sql/`, `notebooks/`, `dashboard/`, `presentation/`
+- [x] No passwords or connection strings anywhere in the repository
+- [x] `data_quality_notes.md` complete and final
+- [x] A "what we would do next" list
 
 ### Presentation
 
-- [ ] Slides drafted — question, data, what you found, what you would do next
-- [ ] Decided who speaks when. Everyone speaks
+- [x] Slides drafted — question, data, what you found, what you would do next
+- [x] Decided who speaks when. Everyone speaks
 - [ ] Rehearsed with a timer. Ten minutes means ten
 - [ ] Rehearsed once more after cutting whatever ran over
 - [ ] Prepared for the obvious questions: why did you clean it that way, why that model, what surprised you
