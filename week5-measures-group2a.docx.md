@@ -124,9 +124,8 @@ One page. Cards along the top, a trend, a breakdown, at least one slicer.
 
 **Paste a screenshot of the page below**
 
-![Final dashboard](final-dashboard.jpg)
+<img width="1446" height="808" alt="final-dashboard" src="https://github.com/user-attachments/assets/0303e451-6e0b-4e20-ab9e-e4c41398d023" />
 
-| :---- |
 
 **5\. What does it actually say?**
 
