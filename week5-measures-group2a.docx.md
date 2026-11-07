@@ -163,11 +163,10 @@ Week 6 is iteration — fixing what this draft exposed and making it readable. T
 
 **7\. Questions for the weekly call**
 
-| - Should the Unknown visit types count in the % Emergency denominator? It gives 14.45% with them and about 15.4% without.
+- Should the Unknown visit types count in the % Emergency denominator? It gives 14.45% with them and about 15.4% without.
 - Is a wait of 209 minutes plausible for this clinic or should we treat the top end of the data as suspect too?
 - Is a statistical check expected before we say the departments do not differ or is a plain-language "within two minutes" enough?
-- Should we add a Visit Type table to make the star schema cleaner? |
-| :---- |
+- Should we add a Visit Type table to make the star schema cleaner? 
 
 | Before you submit this Five measures written, named in plain English and formatted. Every one checked against SQL. One dashboard page with cards, a trend, a breakdown and a working slicer. The .pbix committed to dashboard/. Measure definitions can be discussed openly with group2b. Your dashboard and your findings stay yours. |
 | :---- |
