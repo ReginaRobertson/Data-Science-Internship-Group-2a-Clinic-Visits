@@ -45,7 +45,7 @@ DIVIDE(
     ),
     COUNTROWS('group2a visits_clean')
 ) |           
-| :---- |
+
 
 **5\.  Fee Revenue**
 
