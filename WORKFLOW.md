@@ -252,9 +252,9 @@ Because it stops working the moment you want to slice by something that is not i
 
 - [x] Slides drafted — question, data, what you found, what you would do next
 - [x] Decided who speaks when. Everyone speaks
-- [ ] Rehearsed with a timer. Ten minutes means ten
-- [ ] Rehearsed once more after cutting whatever ran over
-- [ ] Prepared for the obvious questions: why did you clean it that way, why that model, what surprised you
+- [x] Rehearsed with a timer. Ten minutes means ten
+- [x] Rehearsed once more after cutting whatever ran over
+- [x] Prepared for the obvious questions: why did you clean it that way, why that model, what surprised you
 
 **Deliverable:** frozen `.pbix`, complete repository, rehearsed demo.  
 **Done when:** you could present tomorrow with no further work.
@@ -263,11 +263,11 @@ Because it stops working the moment you want to slice by something that is not i
 
 ## Week 8 — Submit and present
 
-- [ ] Final `.pbix` committed
+- [x] Final `.pbix` committed
 - [ ] Repository link submitted
-- [ ] Presentation delivered
+- [x] Presentation delivered
 - [ ] Every group member has commits under their own name
-- [ ] Repository made public (or access shared) so you can show it to employers
+- [x] Repository made public (or access shared) so you can show it to employers
 
 **Done when:** you could send the repository link to an employer today and be glad they clicked it.
 
