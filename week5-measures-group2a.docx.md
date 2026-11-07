@@ -131,23 +131,42 @@ One page. Cards along the top, a trend, a breakdown, at least one slicer.
 
 You now have real numbers for the first time. What do they tell you about your question?
 
-| The single most interesting thing you can see so far:  |
+| The single most interesting thing you can see so far: Waits are about 106 minutes across all the eight department. The eight departments range from 105.7 (Physiotherapy) to 107.7 (Laboratory), a gap of 2.0 minutes. Visit types run from 105.9 to 107.3 and monthly averages stay between 100.6 and 109.8 with no trend. The averages hide a wide spread, though: the dashboard shows 14.07% of visits waiting more than 180 minutes and 27.7% waiting an hour or less. |
 | :---- |
-| **Anything that surprised you, or contradicted what you expected in week 1:**  |
-| **Anything that looks wrong rather than surprising — and what you plan to check:**  |
+| **Anything that surprised you, or contradicted what you expected in week 1:** We expected some departments to be clearly worse and emergency visits to wait less than routine ones. Neither is true: Emergency visits wait 106.9 minutes against 105.9 for Outpatient and 106.5 for Follow-up. We also found that Maternity has the highest total wait (336,592 minutes) only because it has the most visits (3,179) not because its average is longest. |
+| **Anything that looks wrong rather than surprising — and what you plan to check:** Waits is similar across every department, visit type and month are unusual for real clinic data. We plan to check how widely individual waits vary (the standard deviation), so we can say whether a 2-minute gap between departments is meaningful. We also plan to confirm the over-3-hours share (14.07% on the dashboard) with a SQL query and to check why 1,508 visits have no visit type. |
 
 **6\. Ready for week 6?**
 
 Week 6 is iteration — fixing what this draft exposed and making it readable. Think about what it exposed.
 
-| What is missing from the model that you now wish you had? (A dimension, a column, a derived field.)  |
-| :---- |
-| **Which of your week 1 sub-questions can this dashboard already answer?**  |
-| **Which cannot be answered yet, and what would it take?**  |
+**What is missing from the model that you now wish you had? (A dimension, a column, a derived field.)**
+
+- A small Visit Type table (Outpatient, Follow-up, Emergency, Unknown) so visit type is a dimension rather than a text column on the fact table.
+- A Wait Band table, instead of a calculated column, so the bands can be sorted and reused.
+- Arrival, triage and seen times, which would let us explain why waits are long. They are not in the data.
+
+**Which of your week 1 sub-questions can this dashboard already answer?**
+
+- Which departments wait longest and by how much.
+- Whether emergency visits wait less than routine ones.
+- Whether waits are getting better or worse over the two years.
+- How individual waits are spread (the distribution of wait times).
+
+**Which cannot be answered yet, and what would it take?**
+
+- *Why* waits are long: it needs timestamps and staffing data.
+- Whether the small gaps between departments are meaningful: it needs a spread measure or a significance test.
+- Whether busier months have longer waits: the volume and wait charts sit side by side, but it is not tested. It needs a correlation of monthly visits against average wait.
+- Whether the department ranking is stable from month to month: it needs a department by month view.
+
 
 **7\. Questions for the weekly call**
 
-|   |
+| - Should the Unknown visit types count in the % Emergency denominator? It gives 14.45% with them and about 15.4% without.
+- Is a wait of 209 minutes plausible for this clinic or should we treat the top end of the data as suspect too?
+- Is a statistical check expected before we say the departments do not differ or is a plain-language "within two minutes" enough?
+- Should we add a Visit Type table to make the star schema cleaner? |
 | :---- |
 
 | Before you submit this Five measures written, named in plain English and formatted. Every one checked against SQL. One dashboard page with cards, a trend, a breakdown and a working slicer. The .pbix committed to dashboard/. Measure definitions can be discussed openly with group2b. Your dashboard and your findings stay yours. |
