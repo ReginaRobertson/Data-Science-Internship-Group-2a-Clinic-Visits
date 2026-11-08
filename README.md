@@ -1,20 +1,46 @@
-# Data-Science-Internship-Group-2a-Clinic-Visits
+# Clinic Wait-Time Analysis
 
-Data Science & Analytics Internship · 8-week project
+**Group 2a · Clinic visits · Data Science & Analytics Internship (8-week project)**
+
+## Summary
+
+**Question:** Which departments have the longest patient wait times, and how does that vary by visit type and over time?
+
+**Answer:** Patients wait about 106 minutes on average, in every department, every visit type and every month. No department stands out. The decision for the clinic administrator is to treat waiting as a clinic-wide process issue, not to single out one department.
 
 ## Introduction
 
-This project is part of an 8-week Data Science & Analytics internship, where two groups independently analyze the same dataset and answer the same question, so their approaches can be compared at the end.
+A clinic with eight departments is experiencing patient complaints about waiting times. While staff members have differing opinions about which departments experience the longest delays, no systematic analysis of the clinic's visit records has been conducted to establish what is actually happening.
 
-Our group, **Group2a**, has been assigned the **Clinic Visits** dataset from a clinic with eight departments. The clinic has been getting complaints about wait times, but staff disagree on which departments are actually the worst offenders, nobody has looked at the data to settle it. Our job is to do that: analyze roughly 25,100 patient visit records to find out **which departments have the longest wait times and how that varies by visit type and over time.**
+This project addresses that gap through a data-driven investigation of patient waiting times, with the clinic administrator as the primary audience. Since the intended user is not a data analyst, our objective extends beyond analysing data: we aim to translate complex information into clear, accessible and actionable insights that can support informed operational decisions without requiring an analyst to interpret the dashboard.
 
-The final output is a Power BI dashboard built on a proper data model (not a flat spreadsheet dump), designed for the clinic administrator; someone who isn't a data analyst to read and understand on their own, without us there to explain it.
+Undertaken as part of an eight-week Data Science and Analytics internship, the project involves two groups independently investigating the same business question using the same dataset, allowing their analytical approaches and solutions to be compared.
 
-Over the eight weeks, we move from scoping the question, to profiling and cleaning the raw data, to building a data model, to designing and refining the dashboard, ending with a final presentation of what we found.
+Our analysis began with 25,100 raw patient visit records covering January 2024 to December 2025. We progressed through data exploration and quality assessment, data cleaning and preparation, dimensional modelling using a star schema in Power BI and the development of an interactive, one-page dashboard.
 
-## The situation
+The project follows a structured analytical journey, moving from understanding the business problem to preparing reliable data, building an analytical model, designing and refining the dashboard and ultimately communicating evidence-based findings and recommendations.
 
-A clinic with eight departments is getting complaints about waiting. Staff opinions on which departments are worst disagree and the visit records have never been analyzed. This project uses those records to answer the question with data, for an audience, the clinic administrator is someone who is not an analyst and needs the answer to make sense without anyone explaining it.
+Our ultimate goal is simple: transform clinic data into insights that help management understand waiting-time patterns and make better-informed decisions.
+
+
+## Findings
+
+- **Departments:** all eight sit within 2.0 minutes of each other, from 105.7 (Physiotherapy) to 107.7 (Laboratory). The clinic average is 106.32 minutes and the median is 106.00.
+- **Visit type:** Emergency visits wait 106.9 minutes, about the same as Outpatient (105.9) and Follow-up (106.5). Emergency patients do not wait less than routine ones.
+- **Over time:** monthly averages stay between 100.6 and 109.8 minutes across 2024 and 2025, with no upward or downward trend.
+- **Spread:** individual waits vary widely. About 14% of visits waited more than 3 hours, and about 28% waited an hour or less.
+- **Emergency share:** 14.45% of visits (3,613 of 25,000).
+
+**Recommendations:** Review scheduling and patient flow in every department, report the share of visits over 3 hours each month and record visit type on every visit so that no waits are missing or impossible.
+
+## Approach
+
+1. **Scope (week 1).** We turned the question into sub-questions and agreed what was out of scope. See `scope.md`.
+2. **Profile the data in SQL (week 2).** We found six planted problems, with numbers. See `data_quality_notes.md` and the queries in `sql/`.
+3. **Clean it in Python (week 3).** We fixed each problem, recorded the reason, and accounted for every row: 25,100 raw visits minus 100 duplicates is 25,000 clean visits. See `notebooks/`.
+4. **Build the model (week 4).** A star schema in Power BI with a date table we built ourselves.
+5. **Measures and dashboard (weeks 5 and 6).** Five measures, each checked against SQL and one dashboard page.
+6. **Present (weeks 7 and 8).** See `presentation/`.
 
 ## The data
 
@@ -25,30 +51,73 @@ A clinic with eight departments is getting complaints about waiting. Staff opini
 | `doctors` | 40 | Name, department, years of experience |
 | `departments` | 8 | Department name, floor |
 
-Source: PostgreSQL, read from the `raw_clinic` schema (read-only). Our own work is written to the `group2a` schema. There is no date table in the source — we build one ourselves in week 4.
+Source: The data is in PostgreSQL. We read from the read-only `raw_clinic` schema and wrote our cleaned tables to our own `group2a` schema: `visits_clean` (25,000 rows), `patients_clean` (901 rows: 900 patients plus an "Unknown" record), `doctors_clean` (40) and `departments_clean` (8).
 
-The raw data has known issues — missing values, duplicates, inconsistent category spellings, dates in multiple formats and some impossible values. These are catalogued in `data_quality_notes.md`.
+## Data problems and how we handled them
+These are catalogued in `data_quality_notes.md`.
+
+| Problem | What we found | What we did, and why |
+|---|---|---|
+| Duplicate rows | 100 exact duplicate visits | Kept the first copy. Duplicates would double-count visits. |
+| Inconsistent categories | 12 spellings of 3 visit types | Trimmed spaces and standardised case, so each category is one bar. |
+| Missing values | 1,508 visits with no visit type | Labelled "Unknown" and kept the rows, because their waits are valid. |
+| Date formats | 4 formats stored as text | Parsed into real dates, day first. Proven with dates such as 29/07/2024; 535 rows (2.1%) would change if wrong. |
+| Impossible values | 51 negative waits (-209 to 209) | Set to blank and kept the rest of each row. No pattern across departments or months, so any correction would be invented. |
+| Orphan keys | 62 visits with no matching patient | Pointed at an "Unknown" patient so every visit stays in the totals. |
+
+## Data model
+
+`visits_clean` is the fact table, where one row is one patient visit. It connects one-to-many, with a single filter direction, to `departments_clean`, `patients_clean` and `DateTable`, a calendar we built (731 days) and marked as a date table. `doctors_clean` connects through `departments_clean`; the direct link to the fact table is left inactive because Power BI blocked a second active path. The date relationship runs on a clean `Visit Day` column. Keys are hidden and columns have plain-English names.
+
+## Measures, checked against SQL
+
+| Measure | Power BI | SQL |
+|---|---|---|
+| Average Wait | 106.32 | 106.32 |
+| Median Wait | 106.00 | 106.0 |
+| Visits | 25,000 | 25,000 |
+| % Emergency Visits | 14.45% | 14.45% |
+| Fee Revenue | 755,945 | 755,945 |
+
+Total wait time (2,652,563) and all eight department totals also matched SQL.
+
+## Dashboard
+
+One page, built for the clinic administrator: four headline cards, charts by department, visit type and month, monthly visit volume, the spread of waits, a department summary table, a key insights panel, and slicers for year, department, date range and visit type. Every chart axis starts at zero so small gaps are not exaggerated.
+
+![alt text](final-dashboard.jpg)
+
 
 ## Repository structure
 
 ```
-group2a-clinic-visits/
+Data-Science-Internship-Group-2a-Clinic-Visits/
   README.md                 this file
-  scope.md                  week 1 — our question and scope
-  breakout-week1.md         week 1 — breakout session notes
-  sql/                      our queries (profiling, exploration)
-  notebooks/                our Colab cleaning work
-  data_quality_notes.md     week 2 — what we found wrong with the data
-  dashboard/                our .pbix file
-  presentation/             week 8 slides
+  scope.md                  week 1: question and scope
+  breakout-week1.md         week 1: breakout session notes
+  data_quality_notes.md     week 2: what we found wrong with the data
+  sql/                      our queries (profiling and checks)
+  notebooks/                the cleaning notebook
+  dashboard/                the Power BI file (.pbix)
+  presentation/             the final slides
 ```
 
-## How to run this
+
+## How to rebuild this
 
 1. **Database access:** connect to the PostgreSQL instance at `internship-db.coh86gwewtxb.us-east-1.rds.amazonaws.com:5432`, database `internship`, using the `group2a` credentials (password held by the group lead). SSL required. Read from `raw_clinic`, write to `group2a`.
-2. **SQL:** the queries in `sql/` can be run in any PostgreSQL client (we use DBeaver).
-3. **Cleaning:** the notebook(s) in `notebooks/` run in Google Colab and read from `raw_clinic`, writing cleaned tables to the `group2a` schema.
-4. **Dashboard:** open the `.pbix` file in `dashboard/` with Power BI Desktop. It connects to the cleaned tables in `group2a`.
+2. **Run the queries.** The files in `sql/` run in any PostgreSQL client (we used DBeaver). They read from `raw_clinic`.
+3. **Run the cleaning notebook** in `notebooks/` from top to bottom, in Google Colab or any Jupyter environment. It needs Python 3 with pandas, numpy, SQLAlchemy and psycopg2. It asks for the password at run time, reads from `raw_clinic`, and writes the four clean tables to `group2a`. Only one person should run the final write-back, because it replaces the shared tables.
+4. **Open the dashboard.** Open the `.pbix` in `dashboard/` with Power BI Desktop (Windows). It reads the four `_clean` tables from `group2a`, not from exported files.
+5. **Check any figure.** Re-run the measure checks in `sql/` and compare them with the dashboard.
+
+
+## Limitations
+
+- The data shows where waits happen, not why. Explaining why would need arrival, triage and seen times and staffing data.
+- We did not run a statistical test, so we describe the departments as not meaningfully different instead of ranking them.
+- 1,500 visits have no visit type, which limits the visit-type comparison. Averages exclude 50 blanked waits (24,950 timed visits).
+- We did not test whether busier months have longer waits, or whether the department ranking is stable month to month.
 
 ## Project timeline
 
@@ -65,4 +134,5 @@ group2a-clinic-visits/
 
 ## Notes
 
-- This dataset is shared with group2b, who are answering the same question independently. 
+- This dataset is shared with group2b, who are answering the same question independently. Data quality findings are shared openly between the groups. Our analysis and decisions are our own.
+- No passwords and no data files are committed to this repository.
